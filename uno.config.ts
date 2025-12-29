@@ -39,11 +39,21 @@ export default defineConfig({
   },
   rules: [
     // 头像样式
-    ['ai-avatar', { width: 'var(--ai-avatar-width)', height: 'var(--ai-avatar-height)' }],
+    [
+      'ai-avatar',
+      {
+        width: 'var(--ai-avatar-width)',
+        height: 'var(--ai-avatar-height)'
+      }
+    ],
     // 用户名称样式
     [
       'ai-user-name',
-      { 'font-size': 'var(--ai-user-name-font-size)', 'font-weight': 'var(--ai-user-name-weight)', color: 'var(--ai-user-name-text-color)' }
+      {
+        'font-size': 'var(--ai-user-name-font-size)',
+        'font-weight': 'var(--ai-user-name-weight)',
+        color: 'var(--ai-user-name-text-color)'
+      }
     ],
     // 文本描述样式
     [
@@ -117,8 +127,7 @@ export default defineConfig({
     [
       'ai-selected-btn',
       {
-        background:
-          'var(--ai-highlight-btn-bg-color)',
+        background: 'var(--ai-highlight-btn-bg-color)',
         color: 'var(--ai-highlight-btn-text-color)'
       }
     ],
@@ -135,6 +144,22 @@ export default defineConfig({
         'border-radius': 'var(--ai-confirm-btn-border-radius)',
         background: 'var(--ai-highlight-btn-bg-color)',
         color: 'var(--ai-highlight-btn-text-color)'
+      }
+    ],
+    // 通用主要按钮
+    [
+      'primary-gradient-btn',
+      {
+        width: 'var(--ai-confirm-btn-width)',
+        height: 'var(--ai-confirm-btn-height)',
+        'line-height': 'var(--ai-confirm-btn-height)',
+        'font-size': 'var(--ai-confirm-btn-font-size)',
+        'text-align': 'center',
+        'font-weight': 'var(--ai-confirm-btn-font-weight)',
+        'border-radius': 'var(--ai-confirm-btn-border-radius)',
+        background: 'var(--primary-btn-bg-color)',
+        color: 'var(--primary-btn-text-color)',
+        'box-shadow': 'var(--primary-btn-box-shadow)'
       }
     ]
   ]
