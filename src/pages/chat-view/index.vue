@@ -86,7 +86,7 @@
             <span mt-3>your current balance is insufficient</span>
           </div>
           <div mt-8 flex justify-center>
-            <p ai-gradient-btn @click="jumpToRecharge()">Recharge</p>
+            <p primary-gradient-btn @click="jumpToRecharge()">Recharge</p>
           </div>
         </div>
       </div>

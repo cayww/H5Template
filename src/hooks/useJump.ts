@@ -28,7 +28,6 @@ export const useJump = () => {
   const router = useRouter()
   const route = useRoute()
 
-
   /** 接收路由参数 id */
   const queryId = computed<string>(
     () => (route?.query?.id as string) || '2'
@@ -191,25 +190,24 @@ export const useJump = () => {
 }
 
 if (!(window as any).__recharge_bound__) {
-  ; (window as any).__recharge_bound__ = true
+  ;(window as any).__recharge_bound__ = true
+  ;(window as any).onRechargeSuccess = (coins: number) => {
+    // 延迟获取，确保 Pinia 已初始化
+    const userStore = useUserStore()
+    const win = useWindow()
 
-    ; (window as any).onRechargeSuccess = (coins: number) => {
-      // 延迟获取，确保 Pinia 已初始化
-      const userStore = useUserStore()
-      const win = useWindow()
+    userStore.userInfo.coins += coins
 
-      userStore.userInfo.coins += coins
+    win.winUserListData.forEach(v => {
+      if (v.userId === userStore.userInfo.userId) {
+        v.coins = userStore.userInfo.coins
+      }
+    })
 
-      win.winUserListData.forEach(v => {
-        if (v.userId === userStore.userInfo.userId) {
-          v.coins = userStore.userInfo.coins
-        }
-      })
-
-      // 同步给 Flutter
-      window.flutter_inappwebview.callHandler(
-        'updateUser',
-        win.winUserListData
-      )
-    }
+    // 同步给 Flutter
+    window.flutter_inappwebview.callHandler(
+      'updateUser',
+      win.winUserListData
+    )
+  }
 }
