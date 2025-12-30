@@ -41,13 +41,13 @@ window.reportListJson = window.reportListJson || ReportJson
 /** 发布图片选项 */
 window.publishImageListJson = window.publishImageListJson || [
   { name: 'Hobbies', value: 0 },
-  { name: 'Passion', value: 1 },
-  { name: 'Inspire', value: 2 }
+  { name: 'Inspire', value: 1 }
 ]
 
 /** 聊天机器人说明 */
 window.chatBotDesc = window.chatBotDesc || {
-  title: '这个是标题',
-  content: '内容说明',
-  points: 100
+  title: 'Aliox AI',
+  content:
+    'Hi! I’m Aliox ai, your friendly AI music companion.I’m here to chat about singing, music, and everything that inspires your voice. Whether you love belting out classics, exploring new songs, or creating something original, I’m here to share ideas, offer tips, and spark your creativity.From finding the perfect song to discovering new musical vibes, let’s talk, sing, and create something amazing together—every single day.',
+  points: 200
 }

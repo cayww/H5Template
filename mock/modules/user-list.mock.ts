@@ -1,12 +1,13 @@
 // 所有用户列表
 export default [
   {
-    userId: 'u22',
-    email: 'test@gmail.com',
-    password: '',
-    avator: '',
-    name: 'laiyla1',
-    about: '这个人很棒',
+    userId: 'u1',
+    email: 'shesassc@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo1.png',
+    name: 'shesassc',
+    about: 'Nothing',
     coins: 0,
     follow: [],
     fans: [],
@@ -15,12 +16,13 @@ export default [
     videoPostLikeIds: []
   },
   {
-    userId: 'u23',
-    email: 'test@gmail.com',
-    password: '',
-    avator: '',
-    name: 'laiyla2',
-    about: '这个人很棒',
+    userId: 'u2',
+    email: 'krysty@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo2.png',
+    name: 'krysty',
+    about: 'Nothing',
     coins: 0,
     follow: [],
     fans: [],
@@ -29,12 +31,13 @@ export default [
     videoPostLikeIds: []
   },
   {
-    userId: 'u24',
-    email: 'test@gmail.com',
-    password: '',
-    avator: '',
-    name: 'laiyla3',
-    about: '这个人很棒',
+    userId: 'u3',
+    email: 'thissis@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo3.png',
+    name: 'thissis',
+    about: 'Nothing',
     coins: 0,
     follow: [],
     fans: [],
@@ -43,16 +46,92 @@ export default [
     videoPostLikeIds: []
   },
   {
-    userId: 'u99',
-    email: 'test@gmail.com',
-    password: '',
-    avator: '',
-    name: 'laiyla',
-    about: '这个人很棒',
-    coins: 101,
-    follow: ['u24', 'u23'],
-    fans: ['u22', 'u23'],
-    blockList: ['u22'],
+    userId: 'u4',
+    email: 'alondriittaa@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo4.png',
+    name: 'alondriittaa',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
+    picPostLikeIds: [],
+    videoPostLikeIds: []
+  },
+  {
+    userId: 'u5',
+    email: 'samue@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo5.png',
+    name: 'samue',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
+    picPostLikeIds: [],
+    videoPostLikeIds: []
+  },
+  {
+    userId: 'u6',
+    email: 'stasinthegrass@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo6.png',
+    name: 'stasinthegrass',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
+    picPostLikeIds: [],
+    videoPostLikeIds: []
+  },
+  {
+    userId: 'u7',
+    email: 'easaon@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo7.png',
+    name: 'Easaon',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
+    picPostLikeIds: [],
+    videoPostLikeIds: []
+  },
+  {
+    userId: 'u8',
+    email: 'volteee@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo8.png',
+    name: 'Volteee',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
+    picPostLikeIds: [],
+    videoPostLikeIds: []
+  },
+  {
+    userId: 'u9',
+    email: 'yubuas@gmail.com',
+    password: '123456789',
+    avator:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/photo9.png',
+    name: 'yubuas',
+    about: 'Nothing',
+    coins: 0,
+    follow: [],
+    fans: [],
+    blockList: [],
     picPostLikeIds: [],
     videoPostLikeIds: []
   }

@@ -1,62 +1,129 @@
 // 详情信息
 export default [
   {
-    dynamicId: '1', // 根据 /xxx?id=1 来匹配
-    userId: 'u24', // 根据该 id 去查询传入过来的 json 用户的信息
-    dynamicType: 0,
+    dynamicId: 'd1',
+    userId: 'u1',
+    dynamicType: 1,
+    dynamicDesc: 'Sing sing sing',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video1.mp4',
+    dynamicLikeCount: 0,
+    dynamicCommentCount: 0
+  },
+  {
+    dynamicId: 'd2',
+    userId: 'u2',
+    dynamicType: 1,
     dynamicDesc:
-      'Lost in the melody, found in the music. Singing is my kind of freedom ✨🎤',
-    dynamicTitleType: 0, // 动态标题类型
-    // 标签列表
-    dynamicTag: ['标签1'],
-    dynamicPic: ['', ''],
-    dynamicVideo: '',
-    dynamicLikeCount: 2,
+      'This song has been requested so many times, almost as many comments as I’ve had about bringing back the red glasses',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video2.mp4',
+    dynamicLikeCount: 0,
     dynamicCommentCount: 0
   },
   {
-    dynamicId: '2', // 根据 /xxx?id=1 来匹配
-    userId: 'u99', // 根据该 id 去查询传入过来的 json 用户的信息
+    dynamicId: 'd3',
+    userId: 'u3',
     dynamicType: 1,
-    dynamicDesc: '这s是一段描述',
-    dynamicTitleType: 0, // 动态标题类型
-    // 标签列表
-    dynamicTag: ['标签3'],
+    dynamicDesc:
+      'covering my favorite song in the world “it’s a mans world” 🌎✨',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video3.mp4',
+    dynamicLikeCount: 0,
+    dynamicCommentCount: 0
+  },
+  {
+    dynamicId: 'd4',
+    userId: 'u4',
+    dynamicType: 1,
+    dynamicDesc:
+      'so this is loveee - cenicienta 🩵 les gustaría la versión en español también? 👀🤍',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video4.mp4',
+    dynamicLikeCount: 0,
+    dynamicCommentCount: 0
+  },
+  {
+    dynamicId: 'd5',
+    userId: 'u5',
+    dynamicType: 1,
+    dynamicDesc: 'Love - keyshia Cole',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video5.mp4',
+    dynamicLikeCount: 0,
+    dynamicCommentCount: 0
+  },
+  {
+    dynamicId: 'd6',
+    userId: 'u6',
+    dynamicType: 1,
+    dynamicDesc: 'This song belongs to Terry Crews.',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [],
+    dynamicVideo:
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/video6.mp4',
+    dynamicLikeCount: 0,
+    dynamicCommentCount: 0
+  },
+  {
+    dynamicId: 'd7',
+    userId: 'u7',
+    dynamicType: 0,
+    dynamicDesc: 'Singing is truly an essential part of my life',
+    dynamicTitleType: 0,
+    dynamicTag: [],
     dynamicPic: [
-      'https://img2.baidu.com/it/u=3024075546,1738530747&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1391',
-      ''
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture11.png',
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture12.png'
     ],
-    dynamicVideo:
-      'http://huanniuchat.oss-accelerate.aliyuncs.com/template_development/1765178538523_2a48b42e3b1aaf6313116b0d681754e3.MP4',
-    dynamicLikeCount: 2,
+    dynamicVideo: '',
+    dynamicLikeCount: 0,
     dynamicCommentCount: 0
   },
   {
-    dynamicId: '4', // 根据 /xxx?id=1 来匹配
-    userId: 'u24', // 根据该 id 去查询传入过来的 json 用户的信息
-    dynamicType: 1,
-    dynamicDesc: '这s是一段描述',
-    dynamicTitleType: 0, // 动态标题类型
-    // 标签列表
-    dynamicTag: ['标签3'],
-    dynamicPic: [],
-    dynamicVideo:
-      'http://huanniuchat.oss-accelerate.aliyuncs.com/template_development/1765178538523_2a48b42e3b1aaf6313116b0d681754e3.MP4',
-    dynamicLikeCount: 2,
+    dynamicId: 'd8',
+    userId: 'u8',
+    dynamicType: 0,
+    dynamicDesc: 'Only songs can make me relax',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture21.png',
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture22.png'
+    ],
+    dynamicVideo: '',
+    dynamicLikeCount: 0,
     dynamicCommentCount: 0
   },
   {
-    dynamicId: '2', // 根据 /xxx?id=1 来匹配
-    userId: 'u99', // 根据该 id 去查询传入过来的 json 用户的信息
-    dynamicType: 1,
-    dynamicDesc: '这s是一段描述',
-    dynamicTitleType: 0, // 动态标题类型
-    // 标签列表
-    dynamicTag: ['标签3'],
-    dynamicPic: [],
-    dynamicVideo:
-      'http://huanniuchat.oss-accelerate.aliyuncs.com/template_development/1765178538523_2a48b42e3b1aaf6313116b0d681754e3.MP4',
-    dynamicLikeCount: 2,
+    dynamicId: 'd9',
+    userId: 'u9',
+    dynamicType: 0,
+    dynamicDesc: 'Only songs can make me relax',
+    dynamicTitleType: 0,
+    dynamicTag: [],
+    dynamicPic: [
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture31.png',
+      'http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/aliox/dynamic_picture32.png'
+    ],
+    dynamicVideo: '',
+    dynamicLikeCount: 0,
     dynamicCommentCount: 0
   }
 ] as DynamicInfo[]

@@ -22,4 +22,3 @@
     background: var(--ai-follow-bg-color);
   }
 </style>
-
