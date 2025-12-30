@@ -221,7 +221,7 @@ export default {
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: 'icons/aliox_like_post.svg',
+    likeIcon: '/icons/aliox_like_post.svg',
     avatarWidth: '40px',
     avatarHeight: '40px',
     /** 按钮样式 */
@@ -234,26 +234,25 @@ export default {
   },
   /** 发布视频样式 */
   publishVideoStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 其他用户主页样式 */
   otherHomeStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center',
     /** 关注他人图标 */
-    addIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_follow.png',
-    addIconWidth: '20px',
-    addIconHeight: '20px',
+    addIcon: '/icons/aliox_add_icon.svg',
+    addIconWidth: '24px',
+    addIconHeight: '24px',
     /** 留言图标 */
-    messageIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/video_comments.png',
+    messageIcon: '/icons/aliox_comments.svg',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_like_post.png',
-    likeIconWidth: '40px',
-    likeIconHeight: '40px',
+    likeIcon: '/icons/aliox_like_post.svg',
+    likeIconWidth: '34px',
+    likeIconHeight: '34px',
     /** 顶部数据样式 */
     topDataStyle: {
       /** 说明 */
@@ -292,25 +291,28 @@ export default {
   },
   /** 举报样式 */
   reportIndexStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center',
     /** 选项样式 */
     selectBtnStyle: {
       width: '164px',
       height: '115px',
       borderRadius: '20px',
-      backgroundColor: 'rgba(35, 30, 36, 1)',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
       fontSize: '16px',
       fontWeight: '400',
-      color: '#fff'
+      color: 'rgba(14, 28, 66, 1)'
     }
   },
   /** 私聊样式 */
   privateChatStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 设置页样式 */
   settingStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center',
     /** 按钮文本样式 */
     btnTextStyle: {
       backgroundColor:
@@ -322,41 +324,45 @@ export default {
     /** 选择项样式 */
     selectBtnStyle: {
       width: '100%',
-      height: '46px',
+      height: '52px',
       borderRadius: '12px',
-      backgroundColor: '#231e24',
-      color: '#fff',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      color: 'rgba(14, 28, 66, 1)',
       fontSize: '16px',
       fontWeight: '400'
     }
   },
   /** 关注页样式 */
   followStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 粉丝页样式 */
   fansStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 黑名单页样式 */
   blackListStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 编辑页样式 */
   editStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 金币充值 */
   coinStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center',
     /** 选项设置 */
     selectBtnStyle: {
-      width: '105px',
-      height: '100px',
-      borderRadius: '24px',
-      backgroundColor: 'rgba(35, 30, 36, 1)',
-      selectedColor:
-        'linear-gradient(151.23deg, rgba(255, 94, 135, 1) 0%, rgba(48, 156, 133, 1) 100%)'
+      width: 'infinite',
+      height: '64px',
+      borderRadius: '20px',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      selectedColor: 'rgba(255, 255, 255, 1)'
     }
   }
 } satisfies Window['styleJson']
