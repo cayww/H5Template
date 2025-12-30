@@ -52,7 +52,7 @@
         </li>
         <li flex justify-center class="public-btoom-btn">
           <p
-            ai-gradient-btn
+            primary-gradient-btn
             class="bottom-btn public_btn"
             @click="onSubmit"
           >
@@ -113,7 +113,7 @@
   .bottom-btn {
     width: var(--ai-chat-view-btn-width);
     height: var(--ai-chat-view-btn-height);
-    color: var(--ai-chat-view-text-color);
+    color: var(--ai-chat-view-btn-color);
     display: flex;
     align-items: center;
     justify-content: center;

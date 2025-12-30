@@ -71,7 +71,36 @@
       @click="togglePlay"
     />
     <div p-layout-padding class="bottom-box">
-      <div mb-5 flex>
+        <ul mb-5 class="bottom-btn">
+          <li @click="isPopup = true">
+            <van-image
+              :src="messageIcon"
+              class="icon-box"
+              :style="{
+                width: 'var(--video-details-comment-width)',
+                height: 'var(--video-details-comment-height)'
+              }"
+            />
+            <span class="public-number">
+              {{ dynamicInfo?.dynamicCommentCount }}
+            </span>
+          </li>
+          <li>
+              <van-image
+                :src="isVideoLike ? likeIcon : detailLikeIcon"
+                class="icon-box"
+                :style="{
+                  width: 'var(--unlike-image-width)',
+                  height: 'var(--unlike-image-height)'
+                }"
+                @click="onVideoLike"
+              />
+              <span class="public-number">
+                {{ dynamicInfo?.dynamicLikeCount }}
+              </span>
+            </li>
+        </ul>
+      <div flex>
         <div h-12 w-12 relative>
           <van-image
             round
@@ -82,18 +111,18 @@
             @click="onAvator"
           />
           <van-image
-            v-if="!isFollow && userInfo.userId !== dynamicInfo?.userId"
+           v-if="!isFollow && userInfo.userId !== dynamicInfo?.userId"
             round
             right-3
             top-9.5
             absolute
             :src="addIcon"
             fit="cover"
-            @click="onFollow"
             :style="{
               width: 'var(--video-details-follow-width)',
               height: 'var(--video-details-follow-height)'
             }"
+            @click="onFollow"
           />
         </div>
         <ul ml-3 shrink w-full>
@@ -116,35 +145,6 @@
           </li>
         </ul>
       </div>
-      <ul class="bottom-btn">
-        <li @click="isPopup = true">
-          <van-image 
-            :src="messageIcon" 
-            class="icon-box"
-            :style="{
-              width: 'var(--video-details-comment-width)',
-              height: 'var(--video-details-comment-height)'
-            }" 
-          />
-          <span class="public-number">
-            {{ dynamicInfo?.dynamicCommentCount }}
-          </span>
-        </li>
-        <li>
-          <van-image
-            :src="isVideoLike ? likeIcon : detailLikeIcon"
-            class="icon-box"
-            :style="{
-              width: 'var(--unlike-image-width)',
-              height: 'var(--unlike-image-height)'
-            }"
-            @click="onVideoLike"
-          />
-          <span class="public-number">
-            {{ dynamicInfo?.dynamicLikeCount }}
-          </span>
-        </li>
-      </ul>
     </div>
 
     <popup-box v-model:show="isPopup">
@@ -167,7 +167,7 @@
 <style lang="less" scoped>
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
-  }  
+  }
   .video-box {
     width: 100%;
     height: 100vh;
@@ -193,6 +193,8 @@
       bottom: 0;
       left: 0;
       right: 0;
+      display: flex;
+      flex-direction: column;
       // background: linear-gradient(180deg, rgba(14, 8, 15, 0.8) 0%, rgba(14, 8, 15, 0) 100%);
     }
 
@@ -200,11 +202,11 @@
       width: var(--ai-short-video-avatar-width);
       height: var(--ai-short-video-avatar-height);
     }
-
     .bottom-btn {
       display: flex;
-      justify-content: space-between;
-
+      flex-direction: column;
+      gap: 24px;
+      align-self: flex-end;
       li {
         position: relative;
         width: var(--ai-short-video-bottom-btn-width);

@@ -129,12 +129,11 @@ export default {
   chatListStyle: {
     avatarWidth: '44px',
     avatarHeight: '44px',
-    borderRadius: '24px',
+    borderRadius: '20px',
     /** 发送背景色 */
-    sendBgColor: '#434044',
+    sendBgColor: 'rgba(123, 132, 255, 1)',
     /** 接收背景色 */
-    receiveBgColor:
-      'linear-gradient(157.71deg, rgba(255, 94, 135, 1) 0%, rgba(71, 252, 255, 1) 100%)'
+    receiveBgColor: 'rgba(99, 229, 252, 1)'
   },
   /** 举报按钮 */
   reportBtnStyle: {
@@ -145,13 +144,14 @@ export default {
     },
     /** 取消按钮 */
     cancelBtnStyle: {
-      width: '182px',
-      height: '46px'
+      width: '240px',
+      height: '59px'
     }
   },
   /** 动态详情页 */
   articleDetailStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center'
   },
   /** 发布动态 */
   sendDynamicStyle: {
@@ -161,16 +161,17 @@ export default {
   /** 聊天机器人 */
   chatViewStyle: {
     /** 描述文本颜色 */
-    textCorlor: 'rgba(255, 255, 255, 0.6)',
-    backgroundColor: '#0e080f',
+    textCorlor: 'rgba(59, 70, 92, 1)',
+    backgroundColor:
+      'url(/background/aliox_default_bg.png) no-repeat center',
     btnStyle: {
-      width: '227px',
-      height: '56px',
+      width: '240px',
+      height: '59px',
       color: 'rgba(255, 255, 255, 1)',
       rightIcon:
         'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_chat_arr.png',
-      rightIconWidth: '21px',
-      rightIconHeight: '21px'
+      rightIconWidth: '0px',
+      rightIconHeight: '0px'
     },
     /** 弹框样式 */
     popupStyle: {
@@ -178,20 +179,19 @@ export default {
       titleTextStyle: {
         fontSize: '20px',
         fontWeight: '400',
-        color: '#0e080f'
+        color: 'rgba(14, 28, 66, 1)'
       },
       /** 描述文本样式 */
       descTextStyle: {
-        fontSize: '14px',
+        fontSize: '16px',
         fontWeight: '400',
-        color: '#0e080f99'
+        color: 'rgba(87, 96, 115, 1)'
       },
       /** 背景样式 */
       bgImageStyle: {
-        width: '280px',
-        height: '210px',
-        bgImg:
-          'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_pay_bg.png'
+        width: '292px',
+        height: '264px',
+        bgImg: '/background/aliox_ai_pay_bg.png'
       }
     }
   },
@@ -200,36 +200,33 @@ export default {
     backgroundColor: '#0e080f',
     /** 顶部文本样式 */
     topTextStyle: {
-      borderRadius: '20px',
+      borderRadius: '40px 0px 40px 40px',
       width: '190px',
       height: '36px',
-      fontSize: '14px',
+      fontSize: '12px',
       fontWeight: '400',
-      color: '#fff',
-      backgroundColor: '#0d080d33'
+      color: 'rgba(14, 28, 66, 1)',
+      backgroundColor: 'rgba(123, 132, 255, 0.5)'
     }
   },
   /** 短视频 */
   shortVideoStyle: {
     backgroundColor: '#0e080f',
     /** 添加图标 */
-    addIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_follow.png',
+    addIcon: '/icons/aliox_add_icon.svg',
     addIconWidth: '20px',
     addIconHeight: '20px',
     /** 留言图标 */
-    messageIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/video_comments.png',
+    messageIcon: '/icons/aliox_comments.svg',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_like_post.png',
-    avatarWidth: '48px',
-    avatarHeight: '48px',
+    likeIcon: 'icons/aliox_like_post.svg',
+    avatarWidth: '40px',
+    avatarHeight: '40px',
     /** 按钮样式 */
     btnStyle: {
-      width: '162px',
+      width: '100px',
       height: '53px',
       borderRadius: '20px',
       backgroundColor: 'rgba(255, 255, 255, 0.2)'

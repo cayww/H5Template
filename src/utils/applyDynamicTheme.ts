@@ -379,7 +379,7 @@ export const applyDynamicTheme = () => {
     styleJson?.chatViewStyle?.backgroundColor || '#0e080f'
   )
   root.setProperty(
-    '--ai-chat-view-text-color',
+    '--ai-chat-view-btn-color',
     styleJson?.chatViewStyle?.btnStyle?.color || 'rgba(255, 255, 255, 1)'
   )
   root.setProperty(
