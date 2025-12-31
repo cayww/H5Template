@@ -8,7 +8,7 @@
     name: 'ShortVideo'
   })
 
-  const { reportIcon, addIcon, messageIcon, detailLikeIcon, likeIcon } =
+  const { reportIcon, addIcon, messageIcon, detailLikeIcon, detailLikedIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
   const {
@@ -72,7 +72,21 @@
     />
     <div p-layout-padding class="bottom-box">
         <ul mb-5 class="bottom-btn">
-          <li @click="isPopup = true">
+          <li>
+              <van-image
+                :src="isVideoLike ? detailLikedIcon : detailLikeIcon"
+                class="icon-box"
+                :style="{
+                  width: 'var(--unlike-image-width)',
+                  height: 'var(--unlike-image-height)'
+                }"
+                @click="onVideoLike"
+              />
+              <span class="public-number">
+                {{ dynamicInfo?.dynamicLikeCount }}
+              </span>
+            </li>
+            <li @click="isPopup = true">
             <van-image
               :src="messageIcon"
               class="icon-box"
@@ -85,20 +99,6 @@
               {{ dynamicInfo?.dynamicCommentCount }}
             </span>
           </li>
-          <li>
-              <van-image
-                :src="isVideoLike ? likeIcon : detailLikeIcon"
-                class="icon-box"
-                :style="{
-                  width: 'var(--unlike-image-width)',
-                  height: 'var(--unlike-image-height)'
-                }"
-                @click="onVideoLike"
-              />
-              <span class="public-number">
-                {{ dynamicInfo?.dynamicLikeCount }}
-              </span>
-            </li>
         </ul>
       <div flex>
         <div h-12 w-12 relative>
@@ -127,7 +127,7 @@
         </div>
         <ul ml-3 shrink w-full>
           <li flex justify-between>
-            <span ai-user-name>{{ dynamicInfo?.name }}</span>
+            <span style="color:white" ai-user-name>{{ dynamicInfo?.name }}</span>
             <van-image
               v-if="userInfo.userId !== dynamicInfo?.userId"
               :src="reportIcon"
@@ -139,7 +139,7 @@
             />
           </li>
           <li>
-            <span mt-1 ai-text-desc>
+            <span style="color:white" mt-1 ai-text-desc>
               {{ dynamicInfo?.dynamicDesc }}
             </span>
           </li>
@@ -149,7 +149,7 @@
 
     <popup-box v-model:show="isPopup">
       <div p-layout-padding>
-        <van-divider content-position="left">Comments</van-divider>
+        <van-divider class="white-divider" style="color:white" content-position="left">Comments</van-divider>
         <div class="h-[56vh] overflow-y-auto">
           <comment-card
             :list="commentList"
@@ -178,7 +178,10 @@
       height: 100%;
       background: var(--ai-short-video-bg-color);
     }
-
+    .white-divider::before,
+    .white-divider::after {
+      border-color: #fff;
+    }
     .play-box {
       position: absolute;
       top: 50%;

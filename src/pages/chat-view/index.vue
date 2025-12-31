@@ -41,7 +41,7 @@
 <template>
   <div relative class="chat-view_box">
     <van-image :src="ChatBack" fit="cover" class="top-back" />
-    <div class="text-center w-full top-34vh absolute">
+    <div class="text-start w-full top-14vh absolute">
       <ul p-layout-padding>
         <li ai-input-title>{{ winChatBotDesc.title }}</li>
         <li
@@ -82,8 +82,9 @@
             class="content"
             style="background-size: cover"
           >
-            <span mt-18>Sorry</span>
-            <span mt-3>your current balance is insufficient</span>
+            <van-image h-22 w-22 :src="MasonryIcon" fit="cover" />
+            <span style="font-size: 20px">Sorry</span>
+            <span style="font-size: 16px" mt-1>your current balance is insufficient</span>
           </div>
           <div mt-8 flex justify-center>
             <p primary-gradient-btn @click="jumpToRecharge()">Recharge</p>
@@ -98,10 +99,11 @@
   .chat-view_box {
     background: var(--ai-chat-view-bg-color);
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: none;
     .content_box {
-      background: var(--ai-chat-view-bg-color);
-      padding-bottom: calc(50px + var(--ai-view-padding-bottom));
+      width:70%;
+      font-size: 18px;
+      padding-bottom: calc(189px + var(--ai-view-padding-bottom));
     }
   }
 

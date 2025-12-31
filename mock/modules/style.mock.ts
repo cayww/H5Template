@@ -19,7 +19,7 @@ export default {
   },
   /** 点赞图标 */
   likeIcon: '/icons/aliox_like.svg',
-
+  likedIcon: '/icons/aliox_liked.svg',
   /** 点赞图标大小 */
   unlikeImageSize: {
     width: '34px', // 图标宽度
