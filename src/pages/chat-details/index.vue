@@ -153,12 +153,12 @@
   }
   .chat-details_box {
     min-height: 100vh;
-    background: var(--ai-chat-details-bg-color);
+    background: url(/background/aliox_default_bg.png) no-repeat center;
   }
 
   .top-box {
     height: 282px;
-    background: url('@/assets/public/top-chat.png');
+    background: url('@/assets/public/chat-index.png');
     background-size: cover;
     display: flex;
     align-items: flex-end;
