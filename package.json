@@ -21,6 +21,8 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
     "@unhead/vue": "2.0.19",
     "@vant/touch-emulator": "^1.4.0",
     "@vant/use": "^1.6.0",

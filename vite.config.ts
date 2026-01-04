@@ -12,7 +12,6 @@ export default ({ mode }: ConfigEnv): UserConfig => {
   return {
     base: env.VITE_APP_PUBLIC_PATH,
     plugins: createVitePlugins(mode),
-
     server: {
       host: true,
       port: 2025,
@@ -40,6 +39,9 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       outDir: env.VITE_APP_OUT_DIR || 'dist'
     },
 
-    optimizeDeps: { include, exclude }
+    optimizeDeps: {
+      include,
+      exclude
+    }
   }
 }
