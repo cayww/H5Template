@@ -17,81 +17,79 @@ const InitUserInfo = {
   avatar: ''
 }
 
-export const useUserStore = defineStore('user', () => {
-  const userInfo = ref<UserState>({ ...InitUserInfo })
+export const useUserStore = defineStore(
+  'user',
+  () => {
+    const userInfo = ref<UserState>({ ...InitUserInfo })
 
-  // Set user's information
-  const setInfo = (partial: Partial<UserState>) => {
-    userInfo.value = { ...partial }
-  }
+    // Set user's information
+    const setInfo = (partial: Partial<UserState>) => {
+      userInfo.value = { ...partial }
+    }
 
-  const login = async (loginForm: LoginData) => {
-    try {
-      const { data } = await userLogin(loginForm)
-      setToken(data.token)
+    const login = async (loginForm: LoginData) => {
+      try {
+        const { data } = await userLogin(loginForm)
+        setToken(data.token)
+      } catch (error) {
+        clearToken()
+        throw error
+      }
     }
-    catch (error) {
-      clearToken()
-      throw error
-    }
-  }
 
-  const info = async () => {
-    try {
-      const { data } = await getUserInfo()
-      setInfo(data)
+    const info = async () => {
+      try {
+        const { data } = await getUserInfo()
+        setInfo(data)
+      } catch (error) {
+        clearToken()
+        throw error
+      }
     }
-    catch (error) {
-      clearToken()
-      throw error
-    }
-  }
 
-  const logout = async () => {
-    try {
-      await userLogout()
+    const logout = async () => {
+      try {
+        await userLogout()
+      } finally {
+        clearToken()
+        setInfo({ ...InitUserInfo })
+      }
     }
-    finally {
-      clearToken()
-      setInfo({ ...InitUserInfo })
-    }
-  }
 
-  const getCode = async () => {
-    try {
-      const data = await getEmailCode()
-      return data
+    const getCode = async () => {
+      try {
+        const data = await getEmailCode()
+        return data
+      } catch {}
     }
-    catch {}
-  }
 
-  const reset = async () => {
-    try {
-      const data = await resetPassword()
-      return data
+    const reset = async () => {
+      try {
+        const data = await resetPassword()
+        return data
+      } catch {}
     }
-    catch {}
-  }
 
-  const register = async () => {
-    try {
-      const data = await userRegister()
-      return data
+    const register = async () => {
+      try {
+        const data = await userRegister()
+        return data
+      } catch {}
     }
-    catch {}
-  }
 
-  return {
-    userInfo: window.userJson,
-    info,
-    login,
-    logout,
-    getCode,
-    reset,
-    register
+    return {
+      userInfo: window.userJson,
+      info,
+      login,
+      logout,
+      getCode,
+      reset,
+      register
+    }
+  },
+  {
+    persist: true
   }
-}, {
-  persist: true
-})
+)
 
 export default useUserStore

@@ -97,11 +97,11 @@ export default {
   /** 输入文本样式 */
   inputTextStyle: {
     borderRadius: '16px',
-    placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
-    color: 'rgba(255, 255, 255, 0.8)',
+    placeholderCorlor: 'rgba(87, 96, 115, 1)',
+    color: 'rgba(0, 0, 0, 1)',
     fontSize: '14px',
     fontWeight: '400',
-    backgroundColor: '#231e24'
+    backgroundColor: 'rgba(255, 255, 255, 0.8)'
   },
   /** 高亮按钮样式 */
   highlightBtnStyle: {

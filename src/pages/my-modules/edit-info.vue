@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showSuccessToast,showLoadingToast,closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import { reactive } from 'vue'
   import defaultHead from '@/assets/public/default-head.png'
   import upImg from '@/assets/public/up-img.png'
@@ -22,7 +22,6 @@
     about: '',
     avator: ''
   })
-
   const onSubmit = async () => {
     // 1. 显示 Loading
     showLoadingToast({
@@ -78,7 +77,7 @@
         round
         h-20
         w-20
-        :src="imgUrl || defaultHead"
+        :src="imgUrl || userInfo.avator || defaultHead"
         fit="cover"
         @click="clickElement"
       />
@@ -96,7 +95,7 @@
     </div>
 
     <div px-layout-padding>
-      <div ai-input-title style="margin-bottom: 16px">Name</div>
+      <div ai-input-title style="margin-bottom: 10px">Name</div>
       <van-field
         v-model="formData.name"
         placeholder="Please enter"
@@ -105,7 +104,7 @@
     </div>
 
     <div px-layout-padding pt-6>
-      <div ai-input-title style="margin-bottom: 16px">About me</div>
+      <div ai-input-title style="margin-bottom: 10px">About me</div>
       <van-field
         v-model="formData.about"
         placeholder="Please enter"
@@ -115,12 +114,15 @@
 
     <!-- 底部按钮 -->
     <div mt-50 flex justify-center>
-      <div ai-gradient-btn @click="onSubmit">Save</div>
+      <div primary-gradient-btn @click="onSubmit">Save</div>
     </div>
   </div>
 </template>
 
 <style lang="less" scoped>
+  .custom-field :deep(.van-field__control) {
+  color: #ffffff; /* 输入文字颜色 */
+}
   .edit-info_box {
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)

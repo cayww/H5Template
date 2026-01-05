@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import LeftIcon from '@/assets/nav-bar/back.svg'
-  import RightMore from '@/assets/nav-bar/more.svg'
   import Head from '@/assets/public/Head.png'
   import ImgIcon from '@/assets/public/img-icon.png'
   import VideoIcon from '@/assets/public/video-icon.png'
+import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId } from '@/hooks/useDetail'
   import { useFile } from '@/hooks/useFile'
   import { useJump } from '@/hooks/useJump'
@@ -12,7 +12,7 @@
 
   const { onBack, appParams, jumpToCall, queryId } = useJump()
   const { winChatListData, winMessageData, winUserListData } = useWindow()
-
+  const { reportIcon } = useAppImgStyle()
   const { userInfo } = useUserStore()
 
   defineOptions({
@@ -149,7 +149,7 @@
           @click="jumpToCall(viewInfo.userId, queryId)"
         />
         <van-image
-          :src="RightMore"
+          :src="reportIcon"
           h-6
           w-6
           @click="
@@ -178,8 +178,8 @@
   }
 
   .top-chat-navbar {
-    background: url('@/assets/public/chat-nav-bar-bg.png');
+    background: linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%);
     background-size: cover;
-    --van-nav-bar-height: 104px;
+    --van-nav-bar-height: 162px;
   }
 </style>

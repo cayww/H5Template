@@ -32,7 +32,11 @@
 </script>
 
 <template>
-  <div class="call-box">
+  <div class="call-box" :style="{
+  backgroundImage: `url(${userData.avator})`
+}
+"
+>
     <div v-if="!loading" flex flex-col justify-center items-center>
       <div flex flex-col justify-center items-center>
         <van-image
@@ -42,11 +46,11 @@
           fit="cover"
           class="mt-[14vh] !h-20 !w-20"
         />
-        <span ai-user-name my-4>{{ userData.name }}</span>
-        <span ai-text-desc>Calling...</span>
+        <span ai-user-name my-4 style="color:white">{{ userData.name }}</span>
+        <span ai-text-desc style="color:white">Calling...</span>
       </div>
       <p
-        ai-gradient-btn
+        style="background:rgba(255, 28, 100, 1)"
         class="mt-[26vh] !rounded-full !flex !justify-center !items-center !h-16 !w-16"
         @click="onBack"
       >
@@ -66,7 +70,6 @@
     justify-content: center;
     align-items: center;
     // 导入背景图
-    background: url('@/assets/public/call-bg.png');
     background-size: cover;
   }
 </style>
