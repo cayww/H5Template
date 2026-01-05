@@ -1,155 +1,62 @@
+// useVideoCover.ts
+import { ref } from 'vue'
+
 export interface UseVideoCoverReturn {
-  extractCoverFromVideo: (file: File) => Promise<Blob | null>
+  extractCoverFromVideo: (file: File) => Promise<void>
   isExtracting: Ref<boolean>
   error: Ref<string | null>
 }
+
 export function useVideoCover(): UseVideoCoverReturn {
-  const isExtracting = ref(true)
+  const isExtracting = ref(false)
   const error = ref<string | null>(null)
-  const extractCoverFromVideo = (file: File): Promise<Blob | null> => {
-    return new Promise(resolve => {
-      console.log('[cover] start')
 
-      if (!file || !file.type.startsWith('video/')) {
-        console.warn('[cover] not a video file')
-        resolve(null)
-        return
-      }
+  const extractCoverFromVideo = async (file: File): Promise<void> => {
+    if (!file || !file.type.startsWith('video/')) {
+      error.value = '请选择视频文件'
+      return
+    }
 
-      isExtracting.value = true
-      error.value = null
+    isExtracting.value = true
+    error.value = null
+    const fileToBase64 = (file: File): Promise<string> =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = () => resolve(reader.result as string)
+        reader.onerror = reject
+      })
 
-      // ========= 创建隐藏容器 =========
-      console.log('[cover] create temp container')
-      const container = document.createElement('div')
-      container.style.cssText = `
-        position: fixed;
-        left: -99999px;
-        top: 0;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      `
-      document.body.appendChild(container)
+    try {
+      const base64Video = await fileToBase64(file)
 
-      // ========= 创建 video =========
-      console.log('[cover] create video element')
-      const video = document.createElement('video')
-      video.preload = 'metadata'
-      video.muted = true
-      video.playsInline = true
-      video.setAttribute('playsinline', 'true')
-      video.setAttribute('webkit-playsinline', 'true')
-
-      container.appendChild(video)
-      console.log('[cover] video appended to DOM')
-
-      const objectURL = URL.createObjectURL(file)
-      console.log('[cover] set src via ObjectURL', objectURL)
-      video.src = objectURL
-
-      let cleaned = false
-      const cleanup = () => {
-        if (cleaned) return
-        cleaned = true
-        console.log('[cover] cleanup')
-        URL.revokeObjectURL(objectURL)
-        video.remove()
-        container.remove()
-        isExtracting.value = false
-      }
-
-      // ========= 超时兜底 =========
-      const timeout = setTimeout(() => {
-        console.warn('[cover] timeout 6s, force cleanup')
-        cleanup()
-        resolve(null)
-      }, 6000)
-
-      // ========= metadata =========
-      video.onloadedmetadata = () => {
-        console.log('[cover] onloadedmetadata', {
-          duration: video.duration,
-          width: video.videoWidth,
-          height: video.videoHeight
-        })
-
-        if (!video.duration || Number.isNaN(video.duration)) {
-          console.error('[cover] invalid duration')
-          clearTimeout(timeout)
-          cleanup()
-          resolve(null)
-          return
-        }
-
-        // ⚠️ iOS 必须非 0
-        const targetTime = Math.min(1, video.duration / 2)
-        console.log('[cover] set currentTime', targetTime)
-
-        try {
-          video.currentTime = targetTime
-        } catch (e) {
-          console.error('[cover] set currentTime failed', e)
-          clearTimeout(timeout)
-          cleanup()
-          resolve(null)
-        }
-      }
-
-      // ========= seek 完成 =========
-      video.onseeked = () => {
-        console.log('[cover] onseeked')
-
-        const w = video.videoWidth
-        const h = video.videoHeight
-
-        if (!w || !h) {
-          console.error('[cover] invalid video size')
-          clearTimeout(timeout)
-          cleanup()
-          resolve(null)
-          return
-        }
-
-        const canvas = document.createElement('canvas')
-        canvas.width = w
-        canvas.height = h
-
-        const ctx = canvas.getContext('2d')
-        if (!ctx) {
-          console.error('[cover] canvas ctx null')
-          clearTimeout(timeout)
-          cleanup()
-          resolve(null)
-          return
-        }
-
-        ctx.drawImage(video, 0, 0, w, h)
-
-        canvas.toBlob(
-          blob => {
-            console.log('[cover] canvas.toBlob done', blob)
-            clearTimeout(timeout)
-            cleanup()
-            resolve(blob)
-          },
-          'image/jpeg',
-          0.85
+      if ((window as any).flutter_inappwebview?.callHandler) {
+        const coverBase64: string | null = await (
+          window as any
+        ).flutter_inappwebview.callHandler(
+          'generateVideoCover',
+          base64Video
         )
-      }
 
-      // ========= error =========
-      video.onerror = e => {
-        console.error('[cover] video error', e)
-        clearTimeout(timeout)
-        cleanup()
-        resolve(null)
+        if (coverBase64) {
+          // 触发事件给Vue组件
+          const event = new CustomEvent('video-cover-ready', {
+            detail: { cover: coverBase64, fileName: file.name }
+          })
+          window.dispatchEvent(event)
+        } else {
+          error.value = 'Flutter 处理封面失败'
+        }
+      } else {
+        error.value = 'Flutter handler 不可用'
       }
-    })
+    } catch (e: any) {
+      console.error('[Web] extractCoverFromVideo error', e)
+      error.value = e?.message ?? '未知错误'
+    } finally {
+      isExtracting.value = false
+    }
   }
-  return {
-    extractCoverFromVideo,
-    isExtracting,
-    error
-  }
+
+  return { extractCoverFromVideo, isExtracting, error }
 }

@@ -29,6 +29,6 @@ const include = [
   'unplugin-vue-router/data-loaders/basic'
 ]
 
-const exclude = ['@iconify-json/carbon', '@ffmpeg/ffmpeg', '@ffmpeg/util']
+const exclude = ['@iconify-json/carbon']
 
 export { exclude, include }
