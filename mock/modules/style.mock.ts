@@ -362,7 +362,8 @@ export default {
       height: '64px',
       borderRadius: '20px',
       backgroundColor: 'rgba(255, 255, 255, 1)',
-      selectedColor: 'rgba(255, 255, 255, 1)'
+      selectedColor:
+        'linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%)'
     }
   }
 } satisfies Window['styleJson']
