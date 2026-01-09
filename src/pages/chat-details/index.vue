@@ -157,7 +157,7 @@
   }
 
   .top-box {
-    height: 282px;
+    height: 399px;
     background: url('@/assets/public/chat-index.png');
     background-size: cover;
     display: flex;

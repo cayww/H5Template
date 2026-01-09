@@ -111,7 +111,7 @@ export default {
   primaryBtnStyle: {
     color: 'rgba(18, 18, 18, 1)',
     backgroundColor:
-      'linear-gradient(180deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)',
+      'linear-gradient(0deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)',
     boxShadow: ''
   },
   /** 确认按钮样式 */

@@ -49,6 +49,6 @@ window.publishImageListJson = window.publishImageListJson || [
 window.chatBotDesc = window.chatBotDesc || {
   title: 'Civoa AI',
   content:
-    'Hi! I’m Civoa ai, your friendly AI music companion.I’m here to chat about singing, music, and everything that inspires your voice. Whether you love belting out classics, exploring new songs, or creating something original, I’m here to share ideas, offer tips, and spark your creativity.From finding the perfect song to discovering new musical vibes, let’s talk, sing, and create something amazing together—every single day.',
+    'Hi! I\'m Kico, your friendly AI companion here to chat about all your passions and interests. Whether you love fashion, art, music, or anything in between, I\'m here to explore ideas, share tips, and keep the conversation fun and inspiring. Ready to dive into your favorite hobbies together? Let\'s talk and discover something new every day!',
   points: 200
 }

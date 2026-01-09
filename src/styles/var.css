@@ -10,7 +10,7 @@
   --van-divider-text-color: #0efcd0;
   --van-divider-border-color: rgba(255, 255, 255, 0.3);
   --van-divider-font-size: 16px;
-  --van-popup-background: linear-gradient(135deg, #7b84ff 0%, #63e5fc 100%);
+  --van-popup-background: #1f1f1f;
   --ai-view-padding-top: 50px;
   --ai-view-padding-bottom: env(safe-area-inset-bottom);
 }

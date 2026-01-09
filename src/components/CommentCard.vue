@@ -23,41 +23,42 @@
 <template>
   <div safe-area-inset-bottom>
     <empty v-if="props.list.length === 0" />
-    <div
+    <div class="comment-grid">
+      <div
       v-for="(item, index) in props.list"
       :key="index"
       p-4
-      ai-fill-bg
       ai-rounded
       class="card-comment"
     >
-      <ul flex items-center justify-between>
-        <li flex items-center>
-          <van-image
-            round
-            ai-avatar
-            :src="item?.avator || Head"
-            fit="cover"
-          />
-          <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
-        </li>
-        <li v-if="userInfo.userId !== item.userId" flex items-center>
-          <van-image
-            :src="reportIcon"
-            :style="{
-              width: 'var(--report-image-width)',
-              height: 'var(--report-image-height)'
-            }"
-            @click="
-              () => {
-                isReport = true
-                detailId = item.userId
-              }
-            "
-          />
-        </li>
-      </ul>
-      <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
+        <ul flex items-center justify-between>
+          <li flex items-center>
+            <van-image
+              round
+              ai-avatar
+              :src="item?.avator || Head"
+              fit="cover"
+            />
+            <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
+          </li>
+          <li v-if="userInfo.userId !== item.userId" flex items-center>
+            <van-image
+              :src="reportIcon"
+              :style="{
+                width: 'var(--report-image-width)',
+                height: 'var(--report-image-height)'
+              }"
+              @click="
+                () => {
+                  isReport = true
+                  detailId = item.userId
+                }
+              "
+            />
+          </li>
+        </ul>
+        <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
+      </div>
     </div>
 
     <report-box v-model:show="isReport" />
@@ -65,7 +66,15 @@
 </template>
 
 <style lang="less" scoped>
-  .card-comment + .card-comment {
-    margin-top: 12px;
+  .comment-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 0;
+  }
+  .card-comment{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
   }
 </style>

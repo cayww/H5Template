@@ -46,7 +46,7 @@
           @click="formData.radio = item.key"
         >
           <p>
-            <van-image h-4 w-5 :src="MyIcon" fit="cover" />
+            <van-image h-4 w-4 :src="MyIcon" fit="cover" />
             <span ml-1 ai-user-name>{{ item.cions }}</span>
           </p>
           <span ai-text-desc>{{ item.meney }}$</span>
@@ -89,19 +89,17 @@
 
   .bottom-selsect {
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     /* 每行 3 列，每列等宽 */
     gap: 12px;
     /* 可选：设置子项之间的间距 */
     li {
-      width: var(--ai-coin-select-style-width);
       height: var(--ai-coin-select-style-height);
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      padding: 0 10px;
-      justify-content: space-between;
+      justify-content: center;
       border-radius: var(--ai-coin-select-style-border-radius);
       background: var(--ai-coin-select-style-bg-color);
       p {
@@ -113,6 +111,9 @@
 
     .on-active {
       background: var(--ai-coin-select-style-selected-color);
+      span{
+        color: rgba(18, 18, 18, 1);
+      }
     }
   }
 </style>

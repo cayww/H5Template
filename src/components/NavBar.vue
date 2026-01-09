@@ -125,7 +125,7 @@
             height: 'var(--back-image-height)',
           }"
         />
-        <span v-if="showTitle" ml-2 ai-user-name style="background: linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%); -webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text;">{{ title }}</span>
+        <span v-if="showTitle" ml-2 ai-user-name>{{ title }}</span>
       </div>
     </template>
     <template #right>

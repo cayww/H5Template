@@ -41,7 +41,7 @@
 <template>
   <div relative class="chat-view_box">
     <van-image :src="ChatBack" fit="cover" class="top-back" />
-    <div class="text-start w-full top-14vh absolute">
+    <div class="text-center w-full top-30vh absolute">
       <ul p-layout-padding>
         <li ai-input-title>{{ winChatBotDesc.title }}</li>
         <li
@@ -56,11 +56,11 @@
             class="bottom-btn public_btn"
             @click="onSubmit"
           >
-            <van-image h-12 w-12 :src="MasonryIcon" fit="cover" />
-            <span text-5 font-400 ml-1>
+            <van-image h-6 w-6 :src="MasonryIcon" fit="cover" />
+            <span text-5 font-700 ml-1>
               X {{ winChatBotDesc.points }}
             </span>
-            <span text-4 font-400 ml-8 mr-1>Chat</span>
+            <span text-4 font-400 ml-8 mr-1>Release</span>
             <van-image
               :src="chatBtnIcon"
               fit="cover"
@@ -77,14 +77,16 @@
     <van-overlay :show="show" @click="show = false">
       <div flex h-full justify-center>
         <div class="block" @click.stop>
-          <div
+          <div class="relative">
+            <van-image h-22 w-22 :src="MasonryIcon" fit="cover" class="absolute top-(-33px) left-1/2 -translate-x-1/2" />
+            <div
             :style="{ background: `url(${chatBgImage})` }"
             class="content"
             style="background-size: cover"
           >
-            <van-image h-22 w-22 :src="MasonryIcon" fit="cover" />
-            <span>Sorry</span>
-            <span mt-1>your current balance is insufficient</span>
+              <span>Sorry</span>
+              <span mt-1>your current balance is insufficient</span>
+            </div>
           </div>
           <div mt-8 flex justify-center>
             <p primary-gradient-btn @click="jumpToRecharge()">Recharge</p>
@@ -130,15 +132,15 @@
       height: var(--ai-chat-view-popup-bg-img-height);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: end;
       align-items: center;
-
+      padding-bottom: 29px;
       span {
         color: var(--ai-chat-view-popup-title-text-color);
         font-size: var(--ai-chat-view-popup-title-font-size);
         font-weight: var(--ai-chat-view-popup-title-font-weight);
 
-        &:nth-child(3) {
+        &:nth-child(2) {
           color: var(--ai-chat-view-popup-desc-text-color);
           font-size: var(--ai-chat-view-popup-desc-text-size);
           font-weight: var(--ai-chat-view-popup-desc-text-weight);
