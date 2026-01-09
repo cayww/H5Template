@@ -41,7 +41,8 @@ window.reportListJson = window.reportListJson || ReportJson
 /** 发布图片选项 */
 window.publishImageListJson = window.publishImageListJson || [
   { name: 'Hobbies', value: 0 },
-  { name: 'Inspire', value: 1 }
+  { name: 'Passion', value: 1 },
+  { name: 'Inspire', value: 2 }
 ]
 
 /** 聊天机器人说明 */

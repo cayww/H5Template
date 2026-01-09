@@ -35,9 +35,7 @@ html.dark {
   background: #0e1c42;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px #fff;
+  color: white;
 }
 .public-input {
   border-radius: var(--ai-input-text-border-radius);

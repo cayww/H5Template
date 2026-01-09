@@ -43,14 +43,13 @@ export default {
   proseTextStyle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(255, 255, 255, 1)',
+    color: 'rgba(255, 255, 255, 0.8)',
     sort: 'left'
   },
   /** 标签样式（如：描述下面的标签） */
   tagStyle: {
-    backgroundColor: 'rgba(14, 28, 66, 1)',
-    borderRadius: '40px',
-    width: '93px',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: '20px',
     height: '28px',
     fontSize: '12px',
     fontWeight: '400',
@@ -105,34 +104,34 @@ export default {
   },
   /** 高亮按钮样式 */
   highlightBtnStyle: {
-    color: 'rgba(255, 255, 255, 1)',
-    backgroundColor:
-      'linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%)'
+    color: 'rgba(18, 18, 18, 1)',
+    backgroundColor: 'rgba(14, 252, 208, 1)'
   },
   /** 主要按钮样式 */
   primaryBtnStyle: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: 'rgba(18, 18, 18, 1)',
     backgroundColor:
       'linear-gradient(180deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)',
     boxShadow: ''
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
-    borderRadius: '87px',
+    borderRadius: '100px',
     width: '240px',
-    height: '59px',
-    fontSize: '20px',
-    fontWeight: '900'
+    height: '54px',
+    fontSize: '16px',
+    fontWeight: '700'
   },
   /** 聊天列表样式 */
   chatListStyle: {
     avatarWidth: '44px',
     avatarHeight: '44px',
-    borderRadius: '20px',
+    borderRadius: '24px',
     /** 发送背景色 */
-    sendBgColor: 'rgba(123, 132, 255, 1)',
+    sendBgColor: 'rgba(255, 255, 255, 0.1)',
     /** 接收背景色 */
-    receiveBgColor: 'rgba(99, 229, 252, 1)'
+    receiveBgColor:
+      'linear-gradient(180deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)'
   },
   /** 举报按钮 */
   reportBtnStyle: {
@@ -143,8 +142,8 @@ export default {
     },
     /** 取消按钮 */
     cancelBtnStyle: {
-      width: '240px',
-      height: '59px'
+      width: '190px',
+      height: '54px'
     }
   },
   /** 动态详情页 */
@@ -158,12 +157,12 @@ export default {
   /** 聊天机器人 */
   chatViewStyle: {
     /** 描述文本颜色 */
-    textCorlor: 'rgba(59, 70, 92, 1)',
+    textCorlor: 'rgba(255, 255, 255, 0.6)',
     backgroundColor: 'rgba(18, 18, 18, 1)',
     btnStyle: {
-      width: '240px',
-      height: '59px',
-      color: 'rgba(255, 255, 255, 1)',
+      width: '233px',
+      height: '56px',
+      color: 'rgba(18, 18, 18, 1)',
       rightIcon:
         'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_chat_arr.png',
       rightIconWidth: '0px',
@@ -174,20 +173,20 @@ export default {
       /** 标题文本 */
       titleTextStyle: {
         fontSize: '20px',
-        fontWeight: '400',
-        color: 'rgba(14, 28, 66, 1)'
+        fontWeight: '700',
+        color: 'rgba(18, 18, 18, 1)'
       },
       /** 描述文本样式 */
       descTextStyle: {
         fontSize: '16px',
         fontWeight: '400',
-        color: 'rgba(87, 96, 115, 1)'
+        color: 'rgba(18, 18, 18, 0.6)'
       },
       /** 背景样式 */
       bgImageStyle: {
-        width: '292px',
-        height: '264px',
-        bgImg: '/background/aliox_ai_pay_bg.png'
+        width: '280px',
+        height: '157px',
+        bgImg: '/background/ai_pay_bg.png'
       }
     }
   },
@@ -196,33 +195,33 @@ export default {
     backgroundColor: '#0e080f',
     /** 顶部文本样式 */
     topTextStyle: {
-      borderRadius: '40px 0px 40px 40px',
-      width: '190px',
+      borderRadius: '32px',
+      width: '201px',
       height: '36px',
-      fontSize: '12px',
+      fontSize: '14px',
       fontWeight: '400',
-      color: 'rgba(14, 28, 66, 1)',
-      backgroundColor: 'rgba(123, 132, 255, 0.5)'
+      color: 'rgba(255, 255, 255, 1)',
+      backgroundColor: 'rgba(13, 8, 13, 0.2)'
     }
   },
   /** 短视频 */
   shortVideoStyle: {
     backgroundColor: '#0e080f',
     /** 添加图标 */
-    addIcon: '/icons/aliox_add_icon.svg',
-    addIconWidth: '20px',
-    addIconHeight: '20px',
+    addIcon: '/icons/add_icon.png',
+    addIconWidth: '24px',
+    addIconHeight: '24px',
     /** 留言图标 */
-    messageIcon: '/icons/aliox_comments.svg',
+    messageIcon: '/icons/comments_icon.png',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: '/icons/aliox_like_post.svg',
+    likeIcon: '/icons/like.svg',
     avatarWidth: '40px',
     avatarHeight: '40px',
     /** 按钮样式 */
     btnStyle: {
-      width: '100px',
+      width: '163px',
       height: '53px',
       borderRadius: '20px',
       backgroundColor: 'rgba(255, 255, 255, 0.2)'
@@ -236,7 +235,7 @@ export default {
   otherHomeStyle: {
     backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 关注他人图标 */
-    addIcon: '/icons/aliox_add_icon.svg',
+    addIcon: '/icons/add_icon.png',
     addIconWidth: '24px',
     addIconHeight: '24px',
     /** 留言图标 */
@@ -244,14 +243,14 @@ export default {
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: '/icons/aliox_like_post.svg',
-    likeIconWidth: '34px',
-    likeIconHeight: '34px',
+    likeIcon: '/icons/like.svg',
+    likeIconWidth: '40px',
+    likeIconHeight: '40px',
     /** 顶部数据样式 */
     topDataStyle: {
       /** 说明 */
       descTextStyle: {
-        fontSize: '20px',
+        fontSize: '14px',
         fontWeight: '400',
         color: '#fff'
       },
@@ -259,12 +258,12 @@ export default {
       textTextStyle: {
         fontSize: '14px',
         fontWeight: '400',
-        color: 'rgba(255, 255, 255, 0.7)'
+        color: 'rgba(255, 255, 255, 1)'
       }
     },
     /** 左侧描述样式 */
     leftDescStyle: {
-      fontSize: '16px',
+      fontSize: '14px',
       fontWeight: '400',
       color: '#fff'
     },
@@ -273,7 +272,7 @@ export default {
       width: '162px',
       height: '53px',
       borderRadius: '20px',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)'
+      backgroundColor: 'rgba(14, 252, 208, 1)'
     },
     /** 卡片说明 */
     cardDescStyle: {
@@ -306,8 +305,7 @@ export default {
     backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 按钮文本样式 */
     btnTextStyle: {
-      backgroundColor:
-        'linear-gradient(136deg, rgba(255, 94, 135, 1) 60%, rgba(71, 252, 255, 1) 100%)',
+      backgroundColor: 'rgba(255, 87, 51, 1)',
       fontSize: '16px',
       fontWeight: '400',
       color: '#fff'
@@ -315,12 +313,12 @@ export default {
     /** 选择项样式 */
     selectBtnStyle: {
       width: '100%',
-      height: '52px',
-      borderRadius: '12px',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
-      color: 'rgba(14, 28, 66, 1)',
+      height: '46px',
+      borderRadius: '20px',
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      color: 'rgba(255, 255, 255, 1)',
       fontSize: '16px',
-      fontWeight: '400'
+      fontWeight: '700'
     }
   },
   /** 关注页样式 */
@@ -344,12 +342,11 @@ export default {
     backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 选项设置 */
     selectBtnStyle: {
-      width: 'infinite',
-      height: '64px',
-      borderRadius: '20px',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
-      selectedColor:
-        'linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%)'
+      width: '105px',
+      height: '100px',
+      borderRadius: '24px',
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      selectedColor: 'rgba(14, 252, 208, 1)'
     }
   }
 } satisfies Window['styleJson']

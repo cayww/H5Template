@@ -21,16 +21,17 @@
         v-model="value"
         safe-area-inset-bottom
         placeholder="Say something"
+        style="padding:0px 0px 0px 16px"
       >
         <template #button>
           <div flex items-center>
-            <van-image 
-              :src="inputSendIcon" 
-              @click="onSend"
+            <van-image
+              :src="inputSendIcon"
               :style="{
                 width: 'var(--comment-input-image-width)',
                 height: 'var(--comment-input-image-height)'
               }"
+              @click="onSend"
              />
           </div>
         </template>
@@ -62,7 +63,6 @@
 
     .van-field {
       border-radius: var(--ai-field-input-border-radius);
-      height: var(--ai-field-input-height);
       font-size: var(--ai-field-input-font-size);
       font-weight: var(--ai-field-input-font-weight);
       background: var(--ai-field-input-bg-color);

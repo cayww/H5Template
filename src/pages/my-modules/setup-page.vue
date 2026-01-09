@@ -49,14 +49,14 @@
       <li flex justify-center>
         <p
           primary-gradient-btn
-          style="color:white"
+          style="background: rgba(255, 87, 51, 1); color: white;font-weight: 700; width: 190px;height:54px"
           @click="onState('deleteaccount')"
         >
           Delete account
         </p>
       </li>
       <li mt-5 flex justify-center>
-        <p ai-gradient-btn class="bottom-btn" @click="onState('logout')">
+        <p primary-gradient-btn style="color: rgba(18, 18, 18, 1);font-weight: 700; width: 190px;height:54px" @click="onState('logout')">
           Log out
         </p>
       </li>
@@ -77,10 +77,6 @@
       font-weight: 900;
       color: rgba(14, 28, 66, 1);
     }
-  .bottom-btn{
-    background: linear-gradient(180deg, rgba(99, 229, 252, 1) 0%, rgba(179, 241, 252, 1) 100%);
-    box-shadow: 0px 2px 0px  rgba(57, 182, 204, 1), 0px 2px 6px  rgba(26, 151, 173, 1),inset 0px 2px 0px  rgba(255, 255, 255, 0.8);
-  }
   .list-btn {
     li + li {
       margin-top: 16px;

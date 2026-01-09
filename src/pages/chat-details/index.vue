@@ -153,7 +153,7 @@
   }
   .chat-details_box {
     min-height: 100vh;
-    background: url(/background/aliox_default_bg.png) no-repeat center;
+    background: rgba(18, 18, 18, 1);
   }
 
   .top-box {

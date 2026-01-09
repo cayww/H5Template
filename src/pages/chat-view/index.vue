@@ -83,8 +83,8 @@
             style="background-size: cover"
           >
             <van-image h-22 w-22 :src="MasonryIcon" fit="cover" />
-            <span style="font-size: 20px">Sorry</span>
-            <span style="font-size: 16px" mt-1>your current balance is insufficient</span>
+            <span>Sorry</span>
+            <span mt-1>your current balance is insufficient</span>
           </div>
           <div mt-8 flex justify-center>
             <p primary-gradient-btn @click="jumpToRecharge()">Recharge</p>
@@ -138,7 +138,7 @@
         font-size: var(--ai-chat-view-popup-title-font-size);
         font-weight: var(--ai-chat-view-popup-title-font-weight);
 
-        &:nth-child(2) {
+        &:nth-child(3) {
           color: var(--ai-chat-view-popup-desc-text-color);
           font-size: var(--ai-chat-view-popup-desc-text-size);
           font-weight: var(--ai-chat-view-popup-desc-text-weight);

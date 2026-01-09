@@ -38,7 +38,7 @@ const {
         items-center
         right-0
         absolute
-        class="bottom-[-95px]"
+        class="bottom-[-62px]"
       >
         <van-image
           :src="isLike ? detailLikedIcon : detailLikeIcon"
@@ -65,7 +65,7 @@ const {
           <span ai-text-desc>{{ dynamicInfo?.dynamicDesc }}</span>
           <p flex flex-wrap>
             <span mr-2 mt-4 ai-tag-btn>
-              {{ winPublishImageListData[dynamicInfo?.dynamicTitleType].name }}
+              #{{ winPublishImageListData[dynamicInfo?.dynamicTitleType].name }}
             </span>
           </p>
         </li>
@@ -87,7 +87,6 @@ const {
 }
 
 .my-swipe {
-  border-radius: 0 0 20px 20px;
   .van-swipe-item {
     height: 379px;
   }
