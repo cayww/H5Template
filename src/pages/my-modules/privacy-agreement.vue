@@ -2,7 +2,7 @@
   defineOptions({
     name: 'PrivacyAgreement'
   })
-  const appName = 'Aliox'
+  const appName = 'Civoa'
 </script>
 
 <template>

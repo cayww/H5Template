@@ -4,46 +4,46 @@
  */
 export default {
   /** 返回按钮背景图 */
-  backImage: '/icons/aliox_back.svg',
+  backImage: '/icons/back.svg',
   /** 返回图片大小 */
   backImageSize: {
-    width: '40px',
-    height: '40px'
+    width: '24px',
+    height: '24px'
   },
   /** 顶部右侧举报图片 */
-  reportImage: '/icons/aliox_more.svg',
+  reportImage: '/icons/more.svg',
   /** 举报图标大小 */
   reportImageSize: {
+    width: '24px', // 图标宽度
+    height: '24px' // 图标高度
+  },
+  /** 点赞图标 */
+  likeIcon: '/icons/like.svg',
+  likedIcon: '/icons/liked.svg',
+  /** 点赞图标大小 */
+  unlikeImageSize: {
     width: '40px', // 图标宽度
     height: '40px' // 图标高度
   },
-  /** 点赞图标 */
-  likeIcon: '/icons/aliox_like.svg',
-  likedIcon: '/icons/aliox_liked.svg',
-  /** 点赞图标大小 */
-  unlikeImageSize: {
-    width: '34px', // 图标宽度
-    height: '34px' // 图标高度
-  },
   /** 点赞数量文本样式 */
   likeNumTextStyle: {
-    fontSize: '14px',
-    fontWeight: '400',
-    color: 'rgba(14, 28, 66, 1)'
+    fontSize: '20px',
+    fontWeight: '700',
+    color: 'rgba(255, 255, 255, 1)'
   },
   /** 用户名文本样式 */
   userNameStyle: {
     fontSize: '16px',
     fontWeight: '700',
-    color: 'rgba(14, 28, 66, 1)'
+    color: 'rgba(255, 255, 255, 1)'
   },
   /** 头像样式（页面通用头像，小型的） */
-  avatarStyle: { width: '36px', height: '36px' },
+  avatarStyle: { width: '48px', height: '48px' },
   /** 作品文本样式(内容，备注项) */
   proseTextStyle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(59, 70, 92, 1)',
+    color: 'rgba(255, 255, 255, 1)',
     sort: 'left'
   },
   /** 标签样式（如：描述下面的标签） */
@@ -58,46 +58,46 @@ export default {
   },
   /** 文本输入框（发送内容）样式 */
   inputStyle: {
-    backgroundColor: 'rgba(14, 28, 66, 1)',
-    borderRadius: '40px',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: '20px',
     width: '100%',
-    height: '54px',
+    height: '46px',
     fontSize: '14px',
     fontWeight: '400',
     color: 'rgba(255, 255, 255, 1)',
-    placeholderCorlor: 'rgba(87, 96, 115, 1)',
+    placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
     /** 右侧发送图标 */
-    sendIcon: '/icons/aliox_send_icon.svg',
-    sendIconWidth: '32px',
-    sendIconHeight: '32px'
+    sendIcon: '/icons/send_icon.svg',
+    sendIconWidth: '46px',
+    sendIconHeight: '46px'
   },
   /** 表单标题样式 */
   formTitleStyle: {
     fontSize: '20px',
-    fontWeight: '900',
-    color: 'rgba(14, 28, 66, 1)',
-    marginBottom: '20px'
+    fontWeight: '700',
+    color: 'rgba(255, 255, 255, 1)',
+    marginBottom: '9px'
   },
   /** 表单富文本样式 */
   formRichTextStyle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgb(0, 0, 0)',
-    backgroundColor: 'rgb(255, 255, 255)',
-    placeholderCorlor: 'rgba(87, 96, 115, 1)'
+    color: 'rgba(255, 255, 255, 1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    placeholderCorlor: 'rgba(255, 255, 255, 0.6)'
   },
   /** 表单按钮样式 */
   formBtnStyle: {
-    backgroundColor: 'rgba(87, 96, 115, 1)',
-    borderRadius: '40px',
-    fontSize: '18px',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: '20px',
+    fontSize: '14px',
     fontWeight: '400',
     color: 'rgba(255, 255, 255, 1)'
   },
   /** 输入文本样式 */
   inputTextStyle: {
     borderRadius: '16px',
-    placeholderCorlor: 'rgba(87, 96, 115, 1)',
+    placeholderCorlor: 'rgba(255, 255, 255, 0.6)',
     color: 'rgba(0, 0, 0, 1)',
     fontSize: '14px',
     fontWeight: '400',
@@ -113,9 +113,8 @@ export default {
   primaryBtnStyle: {
     color: 'rgba(255, 255, 255, 1)',
     backgroundColor:
-      'linear-gradient(180deg, rgba(132, 64, 227, 1) 0%, rgba(180, 148, 247, 1) 100%)',
-    boxShadow:
-      '0px 2px 0px  rgba(95, 51, 156, 1), 0px 2px 6px  rgba(85, 59, 163, 1),inset 0px 2px 0px  rgba(255, 255, 255, 0.8)'
+      'linear-gradient(180deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)',
+    boxShadow: ''
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
@@ -150,20 +149,17 @@ export default {
   },
   /** 动态详情页 */
   articleDetailStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 发布动态 */
   sendDynamicStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 聊天机器人 */
   chatViewStyle: {
     /** 描述文本颜色 */
     textCorlor: 'rgba(59, 70, 92, 1)',
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center',
+    backgroundColor: 'rgba(18, 18, 18, 1)',
     btnStyle: {
       width: '240px',
       height: '59px',
@@ -234,13 +230,11 @@ export default {
   },
   /** 发布视频样式 */
   publishVideoStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 其他用户主页样式 */
   otherHomeStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center',
+    backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 关注他人图标 */
     addIcon: '/icons/aliox_add_icon.svg',
     addIconWidth: '24px',
@@ -291,8 +285,7 @@ export default {
   },
   /** 举报样式 */
   reportIndexStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center',
+    backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 选项样式 */
     selectBtnStyle: {
       width: '164px',
@@ -306,13 +299,11 @@ export default {
   },
   /** 私聊样式 */
   privateChatStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 设置页样式 */
   settingStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center',
+    backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 按钮文本样式 */
     btnTextStyle: {
       backgroundColor:
@@ -334,28 +325,23 @@ export default {
   },
   /** 关注页样式 */
   followStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 粉丝页样式 */
   fansStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 黑名单页样式 */
   blackListStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 编辑页样式 */
   editStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center'
+    backgroundColor: 'rgba(18, 18, 18, 1)'
   },
   /** 金币充值 */
   coinStyle: {
-    backgroundColor:
-      'url(/background/aliox_default_bg.png) no-repeat center',
+    backgroundColor: 'rgba(18, 18, 18, 1)',
     /** 选项设置 */
     selectBtnStyle: {
       width: 'infinite',

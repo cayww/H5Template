@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, showToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast, showToast } from 'vant'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
@@ -98,7 +98,7 @@
 
     <!-- 底部按钮 -->
     <div mt-20 flex justify-center class="public-btoom-btn">
-      <div ai-gradient-btn class="public_btn" @click="onSubmit">
+      <div primary-gradient-btn class="public_btn" @click="onSubmit">
         Release
       </div>
     </div>

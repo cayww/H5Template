@@ -14,7 +14,6 @@
     { label: 'User Agreement', value: '1' },
     { label: 'Blacklist', value: '2' }
   ]
-
   const onState = (key: AppCommunication) => {
     appParams({ key, state: 2 })
   }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast,showSuccessToast,closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import { detailId } from '@/hooks/useDetail'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
@@ -70,6 +70,7 @@
         show.value = false
       }, 1000)
     } catch (e) {
+      console.log(e)
       closeToast()
     }
   }
@@ -85,7 +86,7 @@
         <p ai-default-btn @click="onShield">Shield</p>
       </li>
       <li>
-        <p ai-default-btn ai-selected-btn @click="show = false">Cancel</p>
+        <p primary-gradient-btn ai-selected-btn @click="show = false">Cancel</p>
       </li>
     </ul>
   </van-popup>

@@ -158,8 +158,7 @@ export default defineConfig({
         'font-weight': 'var(--ai-confirm-btn-font-weight)',
         'border-radius': 'var(--ai-confirm-btn-border-radius)',
         background: 'var(--primary-btn-bg-color)',
-        color: 'var(--primary-btn-text-color)',
-        'box-shadow': 'var(--primary-btn-box-shadow)'
+        color: 'var(--primary-btn-text-color)'
       }
     ]
   ]

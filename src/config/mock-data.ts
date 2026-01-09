@@ -46,8 +46,8 @@ window.publishImageListJson = window.publishImageListJson || [
 
 /** 聊天机器人说明 */
 window.chatBotDesc = window.chatBotDesc || {
-  title: 'Aliox AI',
+  title: 'Civoa AI',
   content:
-    'Hi! I’m Aliox ai, your friendly AI music companion.I’m here to chat about singing, music, and everything that inspires your voice. Whether you love belting out classics, exploring new songs, or creating something original, I’m here to share ideas, offer tips, and spark your creativity.From finding the perfect song to discovering new musical vibes, let’s talk, sing, and create something amazing together—every single day.',
+    'Hi! I’m Civoa ai, your friendly AI music companion.I’m here to chat about singing, music, and everything that inspires your voice. Whether you love belting out classics, exploring new songs, or creating something original, I’m here to share ideas, offer tips, and spark your creativity.From finding the perfect song to discovering new musical vibes, let’s talk, sing, and create something amazing together—every single day.',
   points: 200
 }
