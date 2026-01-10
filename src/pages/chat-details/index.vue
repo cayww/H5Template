@@ -157,8 +157,8 @@
   }
 
   .top-box {
-    height: 399px;
-    background: url('@/assets/public/chat-index.png');
+    height: 281px;
+    background: url('@/assets/public/chat-index-detail.png');
     background-size: cover;
     display: flex;
     align-items: flex-end;

@@ -131,7 +131,7 @@ export default {
     sendBgColor: 'rgba(255, 255, 255, 0.1)',
     /** 接收背景色 */
     receiveBgColor:
-      'linear-gradient(180deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)'
+      'linear-gradient(0deg, rgba(19, 164, 230, 1) 0%, rgba(2, 253, 153, 1) 100%)'
   },
   /** 举报按钮 */
   reportBtnStyle: {
