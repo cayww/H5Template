@@ -173,12 +173,13 @@ import { useAppImgStyle } from '@/hooks/useAppImgStyle'
 <style lang="less" scoped>
   .private-chat_box {
     min-height: 100vh;
-    background: var(--ai-private-chat-bg-color);
+    // background: var(--ai-private-chat-bg-color);
+    background: rgba(31, 31, 31, 1);
     padding-bottom: 70px;
   }
 
   .top-chat-navbar {
-    background: linear-gradient(135deg, rgba(123, 132, 255, 1) 0%, rgba(99, 229, 252, 1) 49.79%, rgba(174, 255, 112, 1) 100%);
+    background:rgba(18, 18, 18, 1);
     background-size: cover;
     --van-nav-bar-height: 162px;
   }

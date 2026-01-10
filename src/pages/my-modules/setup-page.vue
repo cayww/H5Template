@@ -49,14 +49,14 @@
       <li flex justify-center>
         <p
           primary-gradient-btn
-          style="background: rgba(255, 87, 51, 1); color: white;font-weight: 700; width: 190px;height:54px"
+          style="background: rgba(255, 87, 51, 1); color: white;font-weight: 700; width: 190px;height:54px;font-size: 16px;"
           @click="onState('deleteaccount')"
         >
           Delete account
         </p>
       </li>
       <li mt-5 flex justify-center>
-        <p primary-gradient-btn style="color: rgba(18, 18, 18, 1);font-weight: 700; width: 190px;height:54px" @click="onState('logout')">
+        <p primary-gradient-btn style="color: rgba(18, 18, 18, 1);font-weight: 700; width: 190px;height:54px;font-size: 16px;" @click="onState('logout')">
           Log out
         </p>
       </li>

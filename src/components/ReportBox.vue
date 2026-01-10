@@ -80,10 +80,10 @@
   <van-popup v-model:show="show" round position="bottom">
     <ul class="report-box">
       <li>
-        <p ai-default-btn @click="onReport">Report</p>
+        <p ai-default-btn style="background: rgba(14, 252, 208, 1);color:rgba(18, 18, 18, 1)" @click="onReport">Report</p>
       </li>
       <li>
-        <p ai-default-btn @click="onShield">Shield</p>
+        <p ai-default-btn style="background: rgba(255, 87, 51, 1);color:rgba(255, 255, 255, 1)" @click="onShield">Shield</p>
       </li>
       <li>
         <p primary-gradient-btn ai-selected-btn @click="show = false">Cancel</p>

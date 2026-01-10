@@ -125,39 +125,37 @@
 
 <template>
   <div v-if="!loading" class="other-home_box">
-    <div class="top-user-info">
-      <div class="avatar-info">
-        <van-image
-          round
-          ai-avatar
-          :src="userInfo.avator || Head"
-          fit="cover"
-          class="user-head"
-        />
-        <div h-2 w-20 relative>
-          <van-image
-            v-if="!isShowFollow && shouldShowReport(userInfo)"
-            round
-            bottom-2
-            left-14
-            absolute
-            :src="otherHomeAddIcon"
-            fit="cover"
-            :style="{
-              width: 'var(--other-home-follow-width)',
-              height: 'var(--other-home-follow-height)'
-            }"
-            @click="onFollow"
-          />
-        </div>
-        <span mt-1 ai-user-name>{{ userInfo.name }}</span>
-      </div>
-      <ul text-white flex justify-around class="number-box">
+    <div class="top-user-info" :style="{ backgroundImage: `url(${userInfo?.avator})` }">
+      <ul class="top-content">
         <li>
           <span>{{ bottomList.length }}</span>
-          <span>Works</span>
+          <span>Posts</span>
         </li>
-        <li>
+        <li class="avatar-info">
+          <van-image
+            round
+            ai-avatar
+            :src="userInfo.avator || Head"
+            fit="cover"
+            class="user-head"
+          />
+          <div h-2 w-20 relative>
+            <van-image
+              v-if="!isShowFollow && shouldShowReport(userInfo)"
+              round
+              bottom-2
+              left-14
+              absolute
+              :src="otherHomeAddIcon"
+              fit="cover"
+              :style="{
+                width: 'var(--other-home-follow-width)',
+                height: 'var(--other-home-follow-height)'
+              }"
+              @click="onFollow"
+            />
+          </div>
+          <span mt-1 ai-user-name>{{ userInfo.name }}</span>
           <span>{{ userInfo.fans.length }}</span>
           <span>Fans</span>
         </li>
@@ -177,14 +175,14 @@
               height: 'var(--other-home-chat-height)'
             }"
 />
-          <span ml-3 class="public-number !mt-0" @click="onAddChat">
+          <span ml-3 class="public-number !mt-0" style="color:black" @click="onAddChat">
             Chat
           </span>
         </li>
       </ul>
     </div>
-
     <div p-layout-padding class="bottom-card">
+      <span style="font-weight:700;color:white;">Post</span>
       <!-- 内容卡片 -->
       <div
         v-for="(item, index) in bottomList"
@@ -193,11 +191,6 @@
         @click="onGoDetail(item)"
       >
         <ul class="top-info">
-          <!-- <li>
-            <van-image round ai-avatar :src="Head" fit="cover" />
-            <span mx-2 ai-user-name>Apien</span>
-            <span ai-tag-btn class="tag"># Theme</span>
-          </li> -->
           <li />
           <li>
             <van-image
@@ -255,26 +248,36 @@
     background: var(--ai-other-home-bg-color);
   }
   .top-user-info {
-    background: url('@/assets/public/top-home.png');
     background-size: cover;
     width: 100%;
     height: 346px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    color: white;
+    position: relative;
+    z-index: 0;
+    ::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(31, 31, 31, 0.1);
+      z-index: -1;
+    }
     .bottom-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      margin: 5px 0px 12px 0px;
       li {
         color: var(--ai-other-home-right-desc-text-color);
         font-size: var(--ai-other-home-right-desc-text-weight);
         font-weight: var(--ai-other-home-right-desc-text-size);
 
         &:nth-child(2) {
-          margin-left: 10px;
           width: var(--ai-other-home-right-btn-style-width);
           height: var(--ai-other-home-right-btn-style-height);
           flex-shrink: 0;
@@ -288,20 +291,21 @@
         }
       }
     }
-
-    .number-box {
+    .top-content{
       margin: 6px 0;
-
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 40px;
       li {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         span {
           font-size: var(--ai-other-home-top-data-desc-text-size);
           font-weight: var(--ai-other-home-top-data-desc-text-weight);
           color: var(--ai-other-home-top-data-desc-text-color);
-
           &:nth-child(2) {
             font-size: var(--ai-other-home-top-data-text-text-size);
             font-weight: var(--ai-other-home-top-data-text-text-weight);
@@ -319,9 +323,9 @@
     align-items: center;
 
     .user-head {
-      width: 83px;
-      height: 83px;
-      border: 3px solid #fff;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(190, 103, 239, 1);
     }
   }
 

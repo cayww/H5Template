@@ -32,11 +32,8 @@
 </script>
 
 <template>
-  <div class="call-box" :style="{
-  backgroundImage: `url(${userData.avator})`
-}
-"
->
+  <h1 style="color:white">sdasdad</h1>
+  <div class="call-box">
     <div v-if="!loading" flex flex-col justify-center items-center>
       <div flex flex-col justify-center items-center>
         <van-image
@@ -50,13 +47,13 @@
         <span ai-text-desc style="color:white">Calling...</span>
       </div>
       <p
-        style="background:rgba(255, 28, 100, 1)"
+        style="background:rgba(255, 87, 51, 1)"
         class="mt-[26vh] !rounded-full !flex !justify-center !items-center !h-16 !w-16"
         @click="onBack"
       >
         <van-image round :src="HangIcon" fit="cover" />
       </p>
-    </div>
+    </div>s
   </div>
 </template>
 

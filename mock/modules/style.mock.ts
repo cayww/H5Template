@@ -239,7 +239,7 @@ export default {
     addIconWidth: '24px',
     addIconHeight: '24px',
     /** 留言图标 */
-    messageIcon: '/icons/aliox_comments.svg',
+    messageIcon: '/icons/message_chat_icon.svg',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
@@ -290,10 +290,10 @@ export default {
       width: '164px',
       height: '115px',
       borderRadius: '20px',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      backgroundColor: 'rgba(255, 255, 255, .1)',
       fontSize: '16px',
-      fontWeight: '400',
-      color: 'rgba(14, 28, 66, 1)'
+      fontWeight: '700',
+      color: 'rgba(255, 255, 255, 1)'
     }
   },
   /** 私聊样式 */

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import defaultOptionIcon from '@/assets/public/default-option.png'
   import SelectedIcon from '@/assets/public/selected.png'
   import { useJump } from '@/hooks/useJump'
@@ -62,6 +62,7 @@
     } catch (error) {
       // 如果失败，也要关 Loading
       closeToast()
+      console.log(error)
     }
   }
 </script>
@@ -99,7 +100,7 @@
 
     <!-- 底部按钮 -->
     <div mt-20 flex justify-center>
-      <div ai-gradient-btn @click="onSubmlt">Submlt</div>
+      <div primary-gradient-btn @click="onSubmlt">Submit</div>
     </div>
   </div>
 </template>

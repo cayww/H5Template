@@ -100,6 +100,7 @@
         v-model="formData.name"
         placeholder="Please enter"
         class="public-input"
+        style="background: rgba(255, 255, 255, 0.1) !important;"
       />
     </div>
 
@@ -109,6 +110,7 @@
         v-model="formData.about"
         placeholder="Please enter"
         class="public-input"
+        style="background: rgba(255, 255, 255, 0.1) !important;"
       />
     </div>
 
