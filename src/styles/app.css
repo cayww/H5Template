@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 html {
-  background: var(--van-gray-1);
+  background: #121212;
   font-size: var(--van-font-size-lg);
   color-scheme: light;
 }
 html.dark {
-  background: #222;
+  background: #222222;
   color-scheme: dark;
 }
 #app {
