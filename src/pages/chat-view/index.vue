@@ -10,7 +10,7 @@
     name: 'ChatView'
   })
 
-  const { chatBtnIcon, chatBgImage } = useAppImgStyle()
+  const { chatBgImage } = useAppImgStyle()
   const { winUserData, winUserListData, winChatBotDesc } = useWindow()
   const { userInfo } = useUserStore()
   const { jumpToRecharge, appParams, jumpToChatDetail } = useJump()
@@ -19,9 +19,8 @@
   const show = ref(false)
 
   const onSubmit = () => {
-    show.value = !(userInfo.coins >= winChatBotDesc.points)
-    if (userInfo.coins >= winChatBotDesc.points) {
-      const data = {
+    show.value = false
+    const data = {
         ...winUserData,
         coins: userInfo.coins - winChatBotDesc.points
       }
@@ -32,9 +31,8 @@
         }
         return v
       })
-      appParams({ key: 'updateUser', value: list, state: 1 })
-      jumpToChatDetail()
-    }
+    appParams({ key: 'updateUser', value: list, state: 1 })
+    jumpToChatDetail()
   }
 </script>
 
@@ -56,19 +54,7 @@
             class="bottom-btn public_btn"
             @click="onSubmit"
           >
-            <van-image h-12 w-12 :src="MasonryIcon" fit="cover" />
-            <span text-5 font-400 ml-1>
-              X {{ winChatBotDesc.points }}
-            </span>
-            <span text-4 font-400 ml-8 mr-1>Chat</span>
-            <van-image
-              :src="chatBtnIcon"
-              fit="cover"
-              :style="{
-                width: 'var(--ai-btn-arr-image-width)',
-                height: 'var(--ai-btn-arr-image-height)'
-              }"
-            />
+            <span text-6 font-700>Chat</span>
           </p>
         </li>
       </ul>
