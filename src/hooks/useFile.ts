@@ -76,7 +76,7 @@ export const useFile = (cb?: UploadSuccessCallback) => {
 
     try {
       if (!file.type.startsWith('video/')) {
-        const key = `template_development/${Date.now()}_${file.name}`
+        const key = `template_development/civoa_${Date.now()}_${file.name}`
         const result = await client.put(key, file)
         return result.url.replace(/^http:\/\//, https)
       }
