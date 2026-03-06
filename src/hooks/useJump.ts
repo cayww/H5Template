@@ -1,17 +1,6 @@
 import { useUserStore } from '@/stores'
 import { useWindow } from './useWindow'
 
-/**
- * app 通信值
- * updateComment: 更新评论
- * updateUser: 更新用户表
- * updatePost: 更新动态表
- * logout: 退出登录
- * deleteaccount: 删除账号
- * uploadMessage: 更新消息
- * uploadChat: 更新聊天室
- * Recharge: 充值选项
- */
 export type AppCommunication =
   | 'updateComment'
   | 'updateUser'
@@ -21,22 +10,30 @@ export type AppCommunication =
   | 'uploadMessage'
   | 'uploadChat'
   | 'Recharge'
+  | 'close'
 
-/** 路由跳转 */
 export const useJump = () => {
   const { userInfo } = useUserStore()
   const router = useRouter()
   const route = useRoute()
+  const queryId = computed(() => (route?.query?.id as string) || '2')
 
+  /** 统一调用 iOS WKWebView */
+  const callHandler = (key?: AppCommunication, value?: any) => {
+    try {
+      if (!key) return
+      const handler = (window as any).webkit?.messageHandlers?.[key]
+      if (handler) {
+        handler.postMessage(value)
+      } else {
+        console.warn(`iOS handler ${key} not found!`)
+      }
+    } catch (e) {
+      console.warn(`Handler ${key} 调用失败`, e)
+    }
+  }
 
-  /** 接收路由参数 id */
-  const queryId = computed<string>(
-    () => (route?.query?.id as string) || '2'
-  )
-
-  /**
-   * 返回
-   */
+  /** 返回逻辑 */
   const onBack = async () => {
     if (route.query?.name === 'otherHome') {
       router.replace({
@@ -47,133 +44,100 @@ export const useJump = () => {
     }
 
     if (route.query?.url) {
-      if (route.query?.cid) {
-        router.replace({
-          path: route.query.url as string,
-          query: { id: route.query?.cid }
-        })
-      } else {
-        router.replace(route.query.url as string)
-      }
+      router.replace(
+        route.query?.cid
+          ? {
+              path: route.query.url as string,
+              query: { id: route.query?.cid }
+            }
+          : (route.query.url as string)
+      )
       return
     }
 
     if (['ReportIndex'].includes(route.name)) {
       history.back()
     } else {
-      try {
-        await window.flutter_inappwebview.callHandler('close')
-      } catch (e) {
-        console.warn('Flutter handler close 调用失败', e)
-        if (window.history.state.back) {
-          history.back()
-        } else {
-          router.replace('/')
-        }
+      callHandler('close')
+      if (window.history.state.back) {
+        history.back()
+      } else {
+        router.replace('/')
       }
     }
   }
 
-  /** 跳转到充值页面 */
-  const jumpToRecharge = () => {
-    router.replace({
-      path: '/gold-coin',
-      query: { url: 'chat-view' }
-    })
-  }
+  const jump = (path: string, query?: Record<string, any>) =>
+    router.replace({ path, query })
 
-  /** 跳转私聊 */
-  const jumpToPrivateChat = (id: string, cid: string) => {
-    router.replace({
-      path: '/private-chat',
-      query: { id, cid, name: 'otherHome', url: 'other-home' }
+  const jumpToRecharge = () => jump('/gold-coin', { url: 'chat-view' })
+  const jumpToPrivateChat = (id: string, cid: string) =>
+    jump('/private-chat', {
+      id,
+      cid,
+      name: 'otherHome',
+      url: 'other-home'
     })
-  }
-
-  /** 进入聊天详情 */
-  const jumpToChatDetail = () => {
-    router.replace({
-      path: '/chat-details',
-      query: { url: 'chat-view' }
+  const jumpToChatDetail = () =>
+    jump('/chat-details', { url: 'chat-view' })
+  const jumpToBlackList = () =>
+    jump('/black-list', { id: userInfo.userId, url: 'setup-page' })
+  const jumpToUserAgreement = (path: string) =>
+    jump(path, { url: 'setup-page' })
+  const jumpToDetail = (id: string, type: 0 | 1, cid: string) =>
+    jump(type ? '/short-video' : '/article-detail', {
+      id,
+      cid,
+      url: 'other-home'
     })
-  }
+  const jumpToFans = (id: string, type: 0 | 1) =>
+    jump(type ? '/follow' : '/fans', { id, url: 'other-home' })
+  const jumpToCall = (id: string, cid: string) =>
+    jump('/call-index', { id, cid, url: 'private-chat' })
 
-  /** 跳转到黑名单 */
-  const jumpToBlackList = () => {
-    router.replace({
-      path: `/black-list`,
-      query: { id: userInfo.userId, url: 'setup-page' }
-    })
-  }
-
-  /** 用户协议跳转 */
-  const jumpToUserAgreement = (path: string) => {
-    router.replace({
-      path,
-      query: { url: 'setup-page' }
-    })
-  }
-
-  /**
-   * 跳转详情页
-   * @param id 传入对应 id
-   * @param type 0 图片 1 视频
-   */
-  const jumpToDetail = (id: string, type: 0 | 1, cid: string) => {
-    router.replace({
-      path: type ? '/short-video' : '/article-detail',
-      query: { id, cid, url: 'other-home' }
-    })
-  }
-
-  /**
-   * 跳转到对应粉丝关注
-   * @param id
-   * @param type 0 粉丝 1 关注
-   */
-  const jumpToFans = (id: string, type: 0 | 1) => {
-    router.replace({
-      path: type ? '/follow' : '/fans',
-      query: { id, url: 'other-home' }
-    })
-  }
-
-  /** 跳转通话 */
-  const jumpToCall = (id: string, cid: string) => {
-    router.replace({
-      path: '/call-index',
-      query: { id, cid, url: 'private-chat' }
-    })
-  }
-
-  /**
-   * 传给 app 参数
-   */
+  /** App 参数通信 */
   const appParams = ({
     key,
     value,
-    state
+    state = 1
   }: {
     key?: AppCommunication
     value?: any
     state?: 0 | 1 | 2
   }) => {
-    // state 0: 返回上一页 1: 只传值什么都不做 2: 只传 key
     if (state === 0) {
-      window.flutter_inappwebview.callHandler(key, value)
+      callHandler(key, value)
       onBack()
-      return
-    }
-
-    if (state === 1) {
-      window.flutter_inappwebview.callHandler(key, value)
-      return
-    }
-
-    if (state === 2) {
-      window.flutter_inappwebview.callHandler(key)
+    } else if (state === 1) {
+      callHandler(key, value)
+    } else if (state === 2) {
+      callHandler(key)
     }
   }
+
+  /** 充值回调绑定 */
+  const bindRechargeSuccess = () => {
+    if ((window as any).__recharge_bound__) {
+      return
+    }
+    ;(window as any).__recharge_bound__ = true
+    ;(window as any).onRechargeSuccess = (coins: number) => {
+      const userStore = useUserStore()
+      const win = useWindow()
+
+      userStore.userInfo.coins += coins
+
+      win.winUserListData.forEach(v => {
+        if (v.userId === userStore.userInfo.userId) {
+          v.coins = userStore.userInfo.coins
+        }
+      })
+
+      callHandler('updateUser', win.winUserListData)
+    }
+  }
+
+  bindRechargeSuccess()
 
   return {
     onBack,
@@ -188,28 +152,4 @@ export const useJump = () => {
     jumpToPrivateChat,
     queryId
   }
-}
-
-if (!(window as any).__recharge_bound__) {
-  ; (window as any).__recharge_bound__ = true
-
-    ; (window as any).onRechargeSuccess = (coins: number) => {
-      // 延迟获取，确保 Pinia 已初始化
-      const userStore = useUserStore()
-      const win = useWindow()
-
-      userStore.userInfo.coins += coins
-
-      win.winUserListData.forEach(v => {
-        if (v.userId === userStore.userInfo.userId) {
-          v.coins = userStore.userInfo.coins
-        }
-      })
-
-      // 同步给 Flutter
-      window.flutter_inappwebview.callHandler(
-        'updateUser',
-        win.winUserListData
-      )
-    }
 }
