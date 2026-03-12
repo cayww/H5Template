@@ -86,7 +86,7 @@
           <van-image
             round
             ai-avatar
-            :src="item.avator || Head"
+            :src="item.avatar || Head"
             fit="cover"
           />
           <span ml-4 ai-user-name>{{ item.name }}</span>

@@ -38,7 +38,7 @@
         <van-image
           round
           ai-avatar
-          :src="userData.avator || Head"
+          :src="userData.avatar || Head"
           fit="cover"
           class="mt-[14vh] !h-20 !w-20"
         />

@@ -49,7 +49,7 @@
         absolute
         class="bottom-[-64px]"
       >
-        <van-image 
+        <van-image
           :src="isLike ? likeIcon : detailLikeIcon"
           :style="{
             width: 'var(--unlike-image-width)',
@@ -70,7 +70,7 @@
           <van-image
             round
             ai-avatar
-            :src="dynamicInfo?.avator || Head"
+            :src="dynamicInfo?.avatar || Head"
             fit="cover"
           />
           <span mt-1 ai-user-name>{{ dynamicInfo?.name }}</span>
@@ -114,5 +114,5 @@
 
   .article-comment-card_box {
     padding-bottom: calc(80px + var(--ai-view-padding-bottom));
-  } 
+  }
 </style>

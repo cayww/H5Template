@@ -32,7 +32,7 @@ interface UserInfo {
   /** 用户名称 */
   name: string
   /** 用户头像 */
-  avator: string
+  avatar: string
   /** 用户邮箱 */
   email: string
   /** 用户金币 */
@@ -80,7 +80,7 @@ interface DynamicInfo {
   /** 用户名称 */
   name?: string
   /** 用户头像 */
-  avator?: string
+  avatar?: string
   /** 创建时间 */
   dynamicCreateTime?: string
 }
@@ -98,7 +98,7 @@ interface CommentInfo {
   /** 用户名称 */
   name?: string
   /** 用户头像 */
-  avator?: string
+  avatar?: string
   /** 创建时间 */
   createTime?: string
 }
@@ -139,7 +139,7 @@ interface MessageInfo {
   /** 用户名称 */
   name?: string
   /** 用户头像 */
-  avator?: string
+  avatar?: string
   /** 显示位置 */
   position?: 'left' | 'right'
   /** 内容 */

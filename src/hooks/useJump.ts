@@ -23,8 +23,12 @@ export const useJump = () => {
     try {
       if (!key) return
       const handler = (window as any).webkit?.messageHandlers?.[key]
+
       if (handler) {
-        handler.postMessage(value)
+        const safeValue =
+          value !== undefined ? JSON.parse(JSON.stringify(value)) : value
+
+        handler.postMessage(safeValue)
       } else {
         console.warn(`iOS handler ${key} not found!`)
       }

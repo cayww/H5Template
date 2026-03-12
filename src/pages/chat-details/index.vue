@@ -58,7 +58,7 @@
       msgId: `${Date.now()}_m2`,
       chatId: `${Date.now()}_c_c1`,
       name: userInfo.name,
-      avator: userInfo.avator,
+      avatar: userInfo.avatar,
       userId: userInfo.userId,
       sendPicUrl: '',
       sendContent: v
@@ -96,7 +96,7 @@
         msgId: `ai_${aiIndex.value}`,
         chatId: `${Date.now()}_c_c1_ai`,
         name: '',
-        avator: '',
+        avatar: '',
         userId: `${Date.now()}_c_c1_ai_c`,
         sendPicUrl: '',
         sendContent: ''

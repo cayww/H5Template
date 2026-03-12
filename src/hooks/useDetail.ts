@@ -44,12 +44,14 @@ export const useDetail = () => {
     const user = infoData ? userMap.get(infoData.userId) : null
 
     dynamicInfo.value = {
-      ...(infoData),
+      ...infoData,
       name: user?.name ?? '',
-      avator: user?.avator ?? ''
+      avatar: user?.avatar ?? ''
     }
     isLike.value = userInfo?.picPostLikeIds?.includes(queryId.value)
-    isVideoLike.value = userInfo?.videoPostLikeIds?.includes(queryId.value)
+    isVideoLike.value = userInfo?.videoPostLikeIds?.includes(
+      queryId.value
+    )
     isFollow.value = userInfo?.follow.includes(infoData?.userId)
 
     const blockSet = new Set(userInfo?.blockList || [])
@@ -64,7 +66,7 @@ export const useDetail = () => {
       acc.push({
         ...v,
         name: user?.name ?? '',
-        avator: user?.avator ?? ''
+        avatar: user?.avatar ?? ''
       })
       return acc
     }, [])
@@ -86,7 +88,7 @@ export const useDetail = () => {
         userId: userInfo?.userId,
         content: v,
         name: userInfo?.name || '',
-        avator: userInfo?.avator || ''
+        avatar: userInfo?.avatar || ''
       }
       commentList.value.unshift(item)
       paramsList.value.unshift(item)
@@ -97,8 +99,16 @@ export const useDetail = () => {
           v.dynamicCommentCount = dynamicInfo.value.dynamicCommentCount
         }
       })
-      appParams({ key: 'updatePost', value: dynamicListData.value, state: 1 })
-      appParams({ key: 'updateComment', value: paramsList.value, state: 1 })
+      appParams({
+        key: 'updatePost',
+        value: dynamicListData.value,
+        state: 1
+      })
+      appParams({
+        key: 'updateComment',
+        value: paramsList.value,
+        state: 1
+      })
     }
   }
 
@@ -107,7 +117,9 @@ export const useDetail = () => {
    */
   const onLike = () => {
     if (isLike.value) {
-      userInfo.picPostLikeIds = userInfo.picPostLikeIds.filter(v => v !== queryId.value)
+      userInfo.picPostLikeIds = userInfo.picPostLikeIds.filter(
+        v => v !== queryId.value
+      )
       dynamicInfo.value.dynamicLikeCount -= 1
       isLike.value = false
     } else {
@@ -127,14 +139,24 @@ export const useDetail = () => {
         v.picPostLikeIds = userInfo.picPostLikeIds
       }
     })
-    appParams({ key: 'updateUser', value: allUserListData.value, state: 1 })
-    appParams({ key: 'updatePost', value: dynamicListData.value, state: 1 })
+    appParams({
+      key: 'updateUser',
+      value: allUserListData.value,
+      state: 1
+    })
+    appParams({
+      key: 'updatePost',
+      value: dynamicListData.value,
+      state: 1
+    })
   }
 
   /** 视频点赞 */
   const onVideoLike = () => {
     if (isVideoLike.value) {
-      userInfo.videoPostLikeIds = userInfo.videoPostLikeIds.filter(v => v !== queryId.value)
+      userInfo.videoPostLikeIds = userInfo.videoPostLikeIds.filter(
+        v => v !== queryId.value
+      )
       dynamicInfo.value.dynamicLikeCount -= 1
       isVideoLike.value = false
     } else {
@@ -154,8 +176,16 @@ export const useDetail = () => {
         v.videoPostLikeIds = userInfo.videoPostLikeIds
       }
     })
-    appParams({ key: 'updateUser', value: allUserListData.value, state: 1 })
-    appParams({ key: 'updatePost', value: dynamicListData.value, state: 1 })
+    appParams({
+      key: 'updateUser',
+      value: allUserListData.value,
+      state: 1
+    })
+    appParams({
+      key: 'updatePost',
+      value: dynamicListData.value,
+      state: 1
+    })
   }
 
   /** 点击关注 */
@@ -169,7 +199,11 @@ export const useDetail = () => {
           }
         })
         isFollow.value = true
-        appParams({ key: 'updateUser', value: allUserListData.value, state: 1 })
+        appParams({
+          key: 'updateUser',
+          value: allUserListData.value,
+          state: 1
+        })
       }
     }
   }
@@ -186,5 +220,17 @@ export const useDetail = () => {
     getData()
   })
 
-  return { loding, dynamicInfo, commentList, isLike, isVideoLike, isFollow, onFollow, onLike, onSend, onVideoLike, onAvator }
+  return {
+    loding,
+    dynamicInfo,
+    commentList,
+    isLike,
+    isVideoLike,
+    isFollow,
+    onFollow,
+    onLike,
+    onSend,
+    onVideoLike,
+    onAvator
+  }
 }

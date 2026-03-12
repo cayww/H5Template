@@ -36,13 +36,13 @@
           <van-image
             round
             ai-avatar
-            :src="item?.avator || Head"
+            :src="item?.avatar || Head"
             fit="cover"
           />
           <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
         </li>
         <li v-if="userInfo.userId !== item.userId" flex items-center>
-          <van-image 
+          <van-image
             :src="reportIcon"
             :style="{
               width: 'var(--report-image-width)',
@@ -67,5 +67,5 @@
 <style lang="less" scoped>
   .card-comment + .card-comment {
     margin-top: 12px;
-  } 
+  }
 </style>

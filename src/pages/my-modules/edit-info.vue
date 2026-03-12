@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showSuccessToast,showLoadingToast,closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import { reactive } from 'vue'
   import defaultHead from '@/assets/public/default-head.png'
   import upImg from '@/assets/public/up-img.png'
@@ -20,7 +20,7 @@
   const formData = reactive({
     name: '',
     about: '',
-    avator: ''
+    avatar: ''
   })
 
   const onSubmit = async () => {
@@ -43,7 +43,7 @@
       ...userInfo,
       name: formData.name || userInfo.name,
       about: formData.about || userInfo.about,
-      avator: imgUrl.value || userInfo.avator
+      avatar: imgUrl.value || userInfo.avatar
     }
 
     const list = winUserListData.map(v => {

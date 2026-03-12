@@ -30,7 +30,7 @@
             round
             mr-3
             ai-avatar
-            :src="item.avator || Head"
+            :src="item.avatar || Head"
             fit="cover"
             class="user-head"
           />
@@ -66,7 +66,7 @@
             round
             ml-3
             ai-avatar
-            :src="item.avator || Head"
+            :src="item.avatar || Head"
             fit="cover"
             class="user-head"
           />

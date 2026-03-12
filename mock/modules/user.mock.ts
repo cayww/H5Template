@@ -3,7 +3,7 @@ export default {
   userId: 'u99',
   email: 'test@gmail.com',
   password: '',
-  avator: '',
+  avatar: '',
   name: 'laiyla',
   about: '这个人很棒',
   coins: 100,

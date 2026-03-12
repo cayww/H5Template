@@ -46,12 +46,12 @@
       .map(v => {
         if (v.userId === userInfo.userId) {
           v.name = userInfo.name
-          v.avator = userInfo.avator
+          v.avatar = userInfo.avatar
           v.position = 'right'
         }
         if (v.userId === siUserData.userId) {
           v.name = siUserData.name
-          v.avator = siUserData.avator
+          v.avatar = siUserData.avatar
           v.position = 'left'
         }
         return v
@@ -81,7 +81,7 @@
       chatId: queryId.value,
       userId: userInfo.userId,
       name: userInfo.name,
-      avator: userInfo.avator,
+      avatar: userInfo.avatar,
       position: 'right',
       sendContent: state === 1 ? '' : sendContent,
       sendPicUrl: state === 1 ? sendContent : ''
@@ -133,7 +133,7 @@
             round
             mx-3
             ai-avatar
-            :src="viewInfo.avator || Head"
+            :src="viewInfo.avatar || Head"
             fit="cover"
           />
           <span mt-1 ai-user-name>{{ viewInfo.name }}</span>
