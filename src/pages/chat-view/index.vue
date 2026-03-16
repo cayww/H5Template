@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import ChatBack from '@/assets/public/chat-index.png'
   import MasonryIcon from '@/assets/public/masonry-icon.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useJump } from '@/hooks/useJump'
@@ -40,10 +39,27 @@
 
 <template>
   <div relative class="chat-view_box">
-    <van-image :src="ChatBack" fit="cover" class="top-back" />
-    <div class="text-center w-full top-34vh absolute">
+    <!-- Fashion AI -->
+    <div class="fashion-ai-bar top-12vh">
+      <div class="fashion-ai-content">
+        <div class="fashion-ai-text">
+          <div class="title">Fashion AI</div>
+          <div class="desc">
+            Based on your needs, I'll<br />
+            provide you with the most<br />
+            suitable outfit!
+          </div>
+        </div>
+      </div>
+
+      <!-- 右下角人物 -->
+      <img
+        src="/background/leepy_main_ai_rw.png"
+        class="fashion-ai-rw"
+      />
+    </div>
+    <div class="text-center w-full top-25vh absolute">
       <ul p-layout-padding>
-        <li ai-input-title>{{ winChatBotDesc.title }}</li>
         <li
           ai-text-desc
           class="mt-7 !text-[var(--ai-chat-view-text-color)] content_box"
@@ -56,11 +72,11 @@
             class="bottom-btn public_btn"
             @click="onSubmit"
           >
-            <van-image h-12 w-12 :src="MasonryIcon" fit="cover" />
-            <span text-5 font-400 ml-1>
+            <van-image h-8 w-8 :src="MasonryIcon" fit="cover" />
+            <span text-5 font-700 ml-1 style="color:white">
               X {{ winChatBotDesc.points }}
             </span>
-            <span text-4 font-400 ml-8 mr-1>Chat</span>
+            <span text-4 font-400 ml-8 mr-1 style="color:white">Chat</span>
             <van-image
               :src="chatBtnIcon"
               fit="cover"
@@ -78,15 +94,15 @@
       <div flex h-full justify-center>
         <div class="block" @click.stop>
           <div
-            :style="{ background: `url(${chatBgImage})` }"
+            :style="{ background: `${chatBgImage}` }"
             class="content"
             style="background-size: cover"
           >
             <span mt-18>Sorry</span>
             <span mt-3>your current balance is insufficient</span>
-          </div>
-          <div mt-8 flex justify-center>
-            <p ai-gradient-btn @click="jumpToRecharge()">Recharge</p>
+            <div mt-8 flex justify-center>
+              <p ai-gradient-btn @click="jumpToRecharge()">Recharge</p>
+            </div>
           </div>
         </div>
       </div>
@@ -96,18 +112,18 @@
 
 <style lang="less" scoped>
   .chat-view_box {
-    background: var(--ai-chat-view-bg-color);
+    background: url('/background/default_bg.png');
     height: 100vh;
     overflow-y: auto;
     .content_box {
-      background: var(--ai-chat-view-bg-color);
-      padding-bottom: calc(50px + var(--ai-view-padding-bottom));
+      padding: 10px;
+      background: rgb(255, 255, 255);
+      border: 1px solid rgb(51, 51, 51);
+      border-radius: 20px;
+      text-align: center;
+      font-size: 18px;
+      margin: 0 10px;
     }
-  }
-
-  .top-back {
-    width: 100%;
-    height: 510px;
   }
 
   .bottom-btn {
@@ -143,5 +159,56 @@
         }
       }
     }
+  }
+  .fashion-ai-bar {
+    height: 95px;
+    padding: 0 13px;
+    position: relative;
+    margin: 20px 20px;
+
+    background-image: url('/background/leepy_main_ai_bar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .fashion-ai-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .fashion-ai-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .desc {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .forward-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+
+  .fashion-ai-rw {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: 87px;
+    height: 125px;
   }
 </style>

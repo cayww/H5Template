@@ -24,13 +24,13 @@
       >
         <template #button>
           <div flex items-center>
-            <van-image 
-              :src="inputSendIcon" 
-              @click="onSend"
+            <van-image
+              :src="inputSendIcon"
               :style="{
                 width: 'var(--comment-input-image-width)',
                 height: 'var(--comment-input-image-height)'
               }"
+              @click="onSend"
              />
           </div>
         </template>
@@ -57,7 +57,7 @@
 
     .input--width {
       width: var(--ai-field-input-width);
-      padding-bottom: calc(10px + var(--ai-view-padding-bottom));
+      padding-bottom: calc(20px + env(safe-area-inset-bottom));
     }
 
     .van-field {

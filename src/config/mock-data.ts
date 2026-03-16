@@ -41,13 +41,12 @@ window.reportListJson = window.reportListJson || ReportJson
 /** 发布图片选项 */
 window.publishImageListJson = window.publishImageListJson || [
   { name: 'Hobbies', value: 0 },
-  { name: 'Passion', value: 1 },
-  { name: 'Inspire', value: 2 }
+  { name: 'Inspire', value: 1 }
 ]
 
 /** 聊天机器人说明 */
 window.chatBotDesc = window.chatBotDesc || {
-  title: '这个是标题',
-  content: '内容说明',
-  points: 100
+  title: 'Fashion AI',
+  content: 'Hey there! \'m Leepy, your stylish AI companion, here to dive into the world of fashion with you. Whether you\'re into casual looks, professional outfits, or bold street style, I’m here to explore the latest trends, share helpful styling tips, and make sure you always feel confident and chic. Ready to step up your fashion game? Let’s have fun experimenting with new looks and discovering fresh ways to express yourself through style!',
+  points: 200
 }

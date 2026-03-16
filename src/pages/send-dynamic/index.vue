@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, showToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast, showToast } from 'vant'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
@@ -79,20 +79,18 @@
 <template>
   <div safe-area-inset-top px-layout-padding class="send-dynamic_box">
     <!-- 输入框 -->
-    <text-box v-model="formData.dynamicDesc" />
+    <text-box v-model="formData.dynamicDesc" class="desc-box" />
 
     <div mt-9>
       <!-- 主题选项 -->
       <div>
-        <div ai-input-title>Topic</div>
-        <ul flex justify-between>
+        <div ai-input-title>Theme</div>
+        <ul flex gap-3>
           <li
             v-for="item in winPublishImageListData"
             :key="item.value"
-            ai-default-btn
-            :class="{
-              'ai-selected-btn': formData.dynamicTitleType === item.value
-            }"
+            class="option-item"
+            :class="formData.dynamicTitleType === item.value ? 'selected' : 'unselected'"
             @click="formData.dynamicTitleType = item.value"
           >
             {{ item.name }}
@@ -122,5 +120,29 @@
     );
     background: var(--ai-send-dynamic-bg-color);
     min-height: 100vh;
+  }
+  .desc-box {
+    border: 1px solid rgb(51, 51, 51);
+    border-radius: 30px;
+  }
+  .option-item {
+    border-radius: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  /* 未选中 */
+  .option-item.unselected {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  /* 选中 */
+  .option-item.selected {
+    background: linear-gradient(
+      180deg,
+      rgb(233, 175, 251) 0%,
+      rgb(238, 250, 136) 100%
+    );
   }
 </style>

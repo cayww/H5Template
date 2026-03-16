@@ -192,7 +192,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom:calc(20px + env(safe-area-inset-bottom));
+      bottom: calc(20px + env(safe-area-inset-bottom));
       // background: linear-gradient(180deg, rgba(14, 8, 15, 0.8) 0%, rgba(14, 8, 15, 0) 100%);
     }
 

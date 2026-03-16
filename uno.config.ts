@@ -88,7 +88,8 @@ export default defineConfig({
     [
       'ai-fill-bg',
       {
-        background: ' #282329cc'
+        background: 'rgb(169, 192, 255)',
+        border: '1px solid rgb(51, 51, 51)'
       }
     ],
     // 通用的圆角

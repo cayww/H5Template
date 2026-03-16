@@ -141,7 +141,7 @@ export default {
   },
   /** 动态详情页 */
   articleDetailStyle: {
-    backgroundColor: 'url(/background/default_bg.png)'
+    backgroundColor: 'white'
   },
   /** 发布动态 */
   sendDynamicStyle: {

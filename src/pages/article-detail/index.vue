@@ -47,7 +47,7 @@
         items-center
         right-0
         absolute
-        class="bottom-[-64px]"
+        class="bottom-[-100px]"
       >
         <van-image
           :src="isLike ? detailLikedIcon : detailLikeIcon"
@@ -58,7 +58,7 @@
           fit="cover"
           @click="onLike"
         />
-        <span class="public-number">
+        <span class="public-number !fw-400">
           {{ dynamicInfo?.dynamicLikeCount }}
         </span>
       </div>
@@ -78,8 +78,8 @@
         <li ml-5 class="w-[60%]">
           <span ai-text-desc>{{ dynamicInfo?.dynamicDesc }}</span>
           <p flex flex-wrap>
-            <span mr-2 mt-4 ai-tag-btn>
-              {{
+            <span mr-2 mt-4 ai-tag-btn class="border-[1px] border-[#333333]">
+              #{{
                 winPublishImageListData[dynamicInfo?.dynamicTitleType]
                   .name
               }}
@@ -88,13 +88,12 @@
         </li>
       </ul>
 
-      <van-divider content-position="left">Comments</van-divider>
+      <div class="comments-title mt-5 mb-5">Comments</div>
 
       <comment-card
         :list="commentList"
         class="article-comment-card_box"
       />
-
       <input-box @send="onSend" />
     </div>
   </div>
@@ -105,8 +104,19 @@
     background: var(--ai-article-detail-bg-color);
     min-height: 100vh;
   }
-
+  .comments-title{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+    background: rgb(233, 175, 251);
+    border: 1px solid rgb(51, 51, 51);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+  }
   .my-swipe {
+    border-bottom: 1px solid rgba(51, 51, 51, 1);
+    border-radius: 0px 0px 20px 20px;
     .van-swipe-item {
       height: 379px;
     }

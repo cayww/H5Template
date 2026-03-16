@@ -52,5 +52,5 @@ html.dark {
   background: linear-gradient(0deg, rgba(14, 8, 15, 0.8) 0%, rgba(14, 8, 15, 0) 100%);
 }
 .public-btoom-btn .public_btn {
-  margin-bottom: calc(10px + var(--ai-view-padding-bottom));
+  margin-bottom: calc(20px + env(safe-area-inset-bottom));
 }
