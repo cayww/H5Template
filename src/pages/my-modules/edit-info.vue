@@ -121,6 +121,9 @@
 </template>
 
 <style lang="less" scoped>
+  .public-input {
+    border: 1px solid rgb(51, 51, 51);
+  }
   .edit-info_box {
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)

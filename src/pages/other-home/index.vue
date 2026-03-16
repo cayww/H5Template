@@ -14,8 +14,7 @@
   const {
     reportIcon,
     otherHomeAddIcon,
-    otherHomeMessageIcon,
-    otherHomeLikeIcon
+    otherHomeMessageIcon
   } = useAppImgStyle()
   const { queryId, jumpToDetail, appParams, jumpToPrivateChat } =
     useJump()
@@ -169,7 +168,7 @@
       <ul px-layout-padding class="bottom-box">
         <li>{{ userInfo.about }}</li>
         <li
-          v-if="shouldShowReport(userInfo)"
+          v-if="shouldShowReport(userInfo)" style="border: 1px solid rgb(51, 51, 51);"
         >
           <van-image :src="otherHomeMessageIcon" class="icon-box"
             :style="{
@@ -183,7 +182,7 @@
         </li>
       </ul>
     </div>
-
+    <div class="comments-title ml-3">Works</div>
     <div p-layout-padding class="bottom-card">
       <!-- 内容卡片 -->
       <div
@@ -234,14 +233,6 @@
           </li> -->
         </ul>
         <span class="bottom-text">{{ item.dynamicDesc }}</span>
-        <div class="like-box">
-          <van-image :src="otherHomeLikeIcon" class="icon-box" :style="{
-              width: 'var(--other-home-like-post-width)',
-              height: 'var(--other-home-like-post-height)'
-            }"
-/>
-          <span class="public-number">{{ item.dynamicLikeCount }}</span>
-        </div>
       </div>
     </div>
 
@@ -250,13 +241,22 @@
 </template>
 
 <style lang="less" scoped>
+  .comments-title{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    border-radius: 60px;
+    background: rgb(233, 175, 251);
+    border: 1px solid rgb(51, 51, 51);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+  }
   .other-home_box {
     min-height: 100vh;
     background: var(--ai-other-home-bg-color);
   }
 
   .top-user-info {
-    background: url('@/assets/public/top-home.png');
     background-size: cover;
     width: 100%;
     height: 346px;
@@ -320,9 +320,9 @@
     align-items: center;
 
     .user-head {
-      width: 83px;
-      height: 83px;
-      border: 3px solid #fff;
+      width: 56px;
+      height: 56px;
+      border: 1px solid #000;
     }
   }
 
@@ -332,8 +332,9 @@
     }
 
     .card-item {
-      background: rgba(40, 35, 41, 0.8);
+      background: white;
       border-radius: 20px;
+      border: 1px solid rgb(51, 51, 51);
       position: relative;
       overflow: hidden;
 

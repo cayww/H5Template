@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Head from '@/assets/public/ai-head.png'
+  import Head from '/background/leepy_main_ai_rw.png'
 
   const listData = defineModel<MessageInfo[]>('list', {
     type: Array as PropType<MessageInfo[]>,

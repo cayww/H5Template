@@ -4,16 +4,51 @@
 export const rootRouteList: readonly string[] = ['Home', 'Profile']
 
 /** 顶部导航栏不需要填充的路由 */
-export const routeTopNavBar: readonly string[] = ['ArticleDetail', 'ChatView', 'ChatDetails', 'ShortVideo', 'OtherHome']
+export const routeTopNavBar: readonly string[] = [
+  'ArticleDetail',
+  'ChatView',
+  'ChatDetails',
+  'ShortVideo',
+  'OtherHome'
+]
 
 /** 不显示右边按钮路由 */
-export const routeNoRightBtn: readonly string[] = ['SendDynamic', 'ChatView', 'ChatDetails', 'ShortVideo', 'PublishVideo', 'ReportIndex', 'PrivateChat', 'SetupPage', 'Follow', 'Fans', 'BlackList', 'EditInfo', 'GoldCoin', 'UserAgreement', 'PrivacyAgreement', 'CallIndex']
+export const routeNoRightBtn: readonly string[] = [
+  'SendDynamic',
+  'ChatView',
+  'ChatDetails',
+  'PublishVideo',
+  'ReportIndex',
+  'PrivateChat',
+  'SetupPage',
+  'Follow',
+  'Fans',
+  'BlackList',
+  'EditInfo',
+  'GoldCoin',
+  'UserAgreement',
+  'PrivacyAgreement',
+  'CallIndex'
+]
 
 /** 不显示导航栏 */
-export const routeNoNavBar: readonly string[] = ['PrivateChat', 'CallIndex']
+export const routeNoNavBar: readonly string[] = [
+  'PrivateChat',
+  'CallIndex'
+]
 
 /** 显示标题的路由 */
-export const routeShowTitle: readonly string[] = ['SetupPage', 'Follow', 'Fans', 'BlackList', 'EditInfo', 'GoldCoin', 'ReportIndex', 'UserAgreement', 'PrivacyAgreement']
+export const routeShowTitle: readonly string[] = [
+  'SetupPage',
+  'Follow',
+  'Fans',
+  'BlackList',
+  'EditInfo',
+  'GoldCoin',
+  'ReportIndex',
+  'UserAgreement',
+  'PrivacyAgreement'
+]
 
 /** 导航栏颜色样式 */
 export const navBarStyle: readonly string[] = ['ArticleDetail']

@@ -57,7 +57,7 @@
         </p>
       </li>
       <li mt-5 flex justify-center>
-        <p ai-gradient-btn class="bottom-btn" @click="onState('logout')">
+        <p ai-gradient-btn style="background:rgb(169, 192, 255)" class="bottom-btn" @click="onState('logout')">
           Log out
         </p>
       </li>
@@ -85,6 +85,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 16px;
+      border: 1px solid rgb(51, 51, 51);
       height: var(--ai-setting-select-style-height);
       border-radius: var(--ai-setting-select-style-border-radius);
       background: var(--ai-setting-select-style-bg-color);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import defaultOptionIcon from '@/assets/public/default-option.png'
   import SelectedIcon from '@/assets/public/selected.png'
   import { useJump } from '@/hooks/useJump'
@@ -61,6 +61,7 @@
       }, 1000)
     } catch (error) {
       // 如果失败，也要关 Loading
+      console.log(error)
       closeToast()
     }
   }
@@ -94,7 +95,7 @@
     <!-- 输入框 -->
     <div mt-6>
       <div ai-input-title>Supplementary description</div>
-      <text-box v-model="formData.title" rows="3" bg="#231e24" />
+      <text-box v-model="formData.title" rows="3" bg="#231e24" style="border: 1px solid rgb(51, 51, 51);border-radius: 16px;" />
     </div>
 
     <!-- 底部按钮 -->
@@ -130,7 +131,7 @@
       padding: 14px;
       position: relative;
       overflow: hidden;
-
+      border: 1px solid rgb(51, 51, 51);
       .selected-icon {
         position: absolute;
         bottom: -6px;

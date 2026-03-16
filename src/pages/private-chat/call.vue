@@ -32,15 +32,21 @@
 </script>
 
 <template>
-  <div class="call-box">
+  <div class="call-box" :style="{
+    background: `url(${userData?.avatar || ''}) no-repeat top`,
+    objectFit: 'cover',
+    backgroundSize: 'cover'
+  }"
+  >
     <div v-if="!loading" flex flex-col justify-center items-center>
       <div flex flex-col justify-center items-center>
         <van-image
           round
           ai-avatar
+          style="border: 2px solid rgb(51, 51, 51);"
           :src="userData.avatar || Head"
           fit="cover"
-          class="mt-[14vh] !h-20 !w-20"
+          class="mt-[14vh] !h-25 !w-25"
         />
         <span ai-user-name my-4>{{ userData.name }}</span>
         <span ai-text-desc>Calling...</span>
@@ -50,7 +56,7 @@
         class="mt-[26vh] !rounded-full !flex !justify-center !items-center !h-16 !w-16"
         @click="onBack"
       >
-        <van-image round :src="HangIcon" fit="cover" />
+        <van-image :src="HangIcon" fit="cover" />
       </p>
     </div>
   </div>
@@ -60,13 +66,11 @@
   .call-box {
     width: 100%;
     height: 100vh;
-    background: var(--ai-private-chat-bg-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // 导入背景图
-    background: url('@/assets/public/call-bg.png');
     background-size: cover;
+    object-fit: cover;
   }
 </style>

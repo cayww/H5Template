@@ -122,9 +122,9 @@ export default {
     avatarHeight: '44px',
     borderRadius: '10px',
     /** 发送背景色 */
-    sendBgColor: 'rgba(233, 175, 251, 1)',
+    sendBgColor: 'rgba(169, 192, 255, 1)',
     /** 接收背景色 */
-    receiveBgColor: 'rgba(169, 192, 255, 1)'
+    receiveBgColor: 'rgba(233, 175, 251, 1)'
   },
   /** 举报按钮 */
   reportBtnStyle: {
@@ -184,7 +184,7 @@ export default {
   },
   /** 聊天详情样式 */
   chatDetailsStyle: {
-    backgroundColor: 'url(/background/default_bg.png)',
+    backgroundColor: 'url(/background/default_bg.png) no-repeat',
     /** 顶部文本样式 */
     topTextStyle: {
       borderRadius: '30px',

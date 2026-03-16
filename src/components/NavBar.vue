@@ -44,7 +44,7 @@
     const show = ['OtherHome'].includes(
       route.name as string
     )
-    if (show) { 
+    if (show) {
       return queryId.value !== userInfo.userId
     }
     return show
@@ -117,9 +117,9 @@
     @click-left="onBack"
   >
     <template v-if="showLeftArrow" #left>
-      <div flex items-end justify-center>
-        <van-image 
-          :src="backIcon" 
+      <div flex items-center justify-center>
+        <van-image
+          :src="backIcon"
           :style="{
             width: 'var(--back-image-width)',
             height: 'var(--back-image-height)',

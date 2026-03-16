@@ -112,7 +112,7 @@
 
 <style lang="less" scoped>
   .chat-view_box {
-    background: url('/background/default_bg.png');
+    background: url('/background/default_bg.png') no-repeat center;
     height: 100vh;
     overflow-y: auto;
     .content_box {

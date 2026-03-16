@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast,showSuccessToast,closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import { detailId } from '@/hooks/useDetail'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
@@ -70,19 +70,20 @@
         show.value = false
       }, 1000)
     } catch (e) {
+      console.log(e)
       closeToast()
     }
   }
 </script>
 
 <template>
-  <van-popup v-model:show="show" round position="bottom">
+  <van-popup v-model:show="show" round position="bottom" style="background: url('/background/report_box_bg.png' ) no-repeat center;">
     <ul class="report-box">
       <li>
-        <p ai-default-btn @click="onReport">Report</p>
+        <p ai-default-btn style="background:white;color:rgb(51, 51, 51);border: 1px solid rgb(0, 0, 0);" @click="onReport">Report</p>
       </li>
       <li>
-        <p ai-default-btn @click="onShield">Shield</p>
+        <p ai-default-btn style="background:white;color:rgb(51, 51, 51);border: 1px solid rgb(0, 0, 0);" @click="onShield">Shield</p>
       </li>
       <li>
         <p ai-default-btn ai-selected-btn @click="show = false">Cancel</p>
@@ -97,7 +98,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0 30px;
+    padding: 34px 0 80px;
 
     li + li {
       margin-top: 16px;

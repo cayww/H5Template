@@ -1,9 +1,8 @@
 <script setup lang="ts">
-  import LeftIcon from '@/assets/nav-bar/back.svg'
-  import RightMore from '@/assets/nav-bar/more.svg'
   import Head from '@/assets/public/Head.png'
   import ImgIcon from '@/assets/public/img-icon.png'
   import VideoIcon from '@/assets/public/video-icon.png'
+  import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId } from '@/hooks/useDetail'
   import { useFile } from '@/hooks/useFile'
   import { useJump } from '@/hooks/useJump'
@@ -14,7 +13,7 @@
   const { winChatListData, winMessageData, winUserListData } = useWindow()
 
   const { userInfo } = useUserStore()
-
+  const { backIcon, reportIcon } = useAppImgStyle()
   defineOptions({
     name: 'PrivateChat'
   })
@@ -128,7 +127,13 @@
     >
       <template #left>
         <div flex items-center>
-          <van-image :src="LeftIcon" h-6 w-6 />
+          <van-image
+          :src="backIcon"
+          :style="{
+            width: 'var(--back-image-width)',
+            height: 'var(--back-image-height)',
+          }"
+        />
           <van-image
             round
             mx-3
@@ -149,9 +154,11 @@
           @click="jumpToCall(viewInfo.userId, queryId)"
         />
         <van-image
-          :src="RightMore"
-          h-6
-          w-6
+          :src="reportIcon"
+          :style="{
+            width: 'var(--report-image-width)',
+            height: 'var(--report-image-height)'
+          }"
           @click="
             () => {
               detailId = viewInfo.userId
@@ -163,7 +170,7 @@
     </VanNavBar>
 
     <div>
-      <chat-list v-model:list="listData" @send="v => onSend(v)" />
+      <chat-list v-model:list="listData" class="bottom-list_box" @send="v => onSend(v)" />
     </div>
 
     <report-box v-model:show="isReport" />
@@ -171,15 +178,22 @@
 </template>
 
 <style lang="less" scoped>
+  .bottom-list_box {
+    background: rgb(255, 255, 255);
+    padding-bottom: calc(80px + var(--ai-view-padding-bottom));
+    margin-top:5px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px -2px 0px  rgb(0, 0, 0);
+    border-top: 1px solid rgb(51, 51, 51);
+  }
   .private-chat_box {
     min-height: 100vh;
-    background: var(--ai-private-chat-bg-color);
+    background: var(--ai-private-chat-bg-color) no-repeat top;
+    object-fit: cover;
     padding-bottom: 70px;
   }
 
   .top-chat-navbar {
-    background: url('@/assets/public/chat-nav-bar-bg.png');
     background-size: cover;
-    --van-nav-bar-height: 104px;
   }
 </style>

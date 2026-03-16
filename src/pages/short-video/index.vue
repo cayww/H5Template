@@ -8,7 +8,7 @@
     name: 'ShortVideo'
   })
 
-  const { reportIcon, addIcon, messageIcon, likeIcon, unLikeIcon } =
+  const { addIcon, messageIcon, likeIcon, unLikeIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
   const {
@@ -71,7 +71,34 @@
       @click="togglePlay"
     />
     <div p-layout-padding class="bottom-box">
-      <div mb-5 flex>
+      <ul class="bottom-btn">
+        <li>
+          <van-image
+            :src="isVideoLike ? likeIcon : unLikeIcon"
+            :style="{
+              width: 'var(--unlike-image-width)',
+              height: 'var(--unlike-image-height)'
+            }"
+            @click="onVideoLike"
+          />
+          <span class="public-number">
+            {{ dynamicInfo?.dynamicLikeCount }}
+          </span>
+        </li>
+        <li @click="isPopup = true">
+          <van-image
+            :src="messageIcon"
+            :style="{
+              width: 'var(--video-details-comment-width)',
+              height: 'var(--video-details-comment-height)'
+            }"
+          />
+          <span class="public-number" style="color: rgb(102, 102, 102);">
+            {{ dynamicInfo?.dynamicCommentCount }}
+          </span>
+        </li>
+      </ul>
+      <div flex>
         <div h-12 w-12 relative>
           <van-image
             round
@@ -98,59 +125,21 @@
         </div>
         <ul ml-3 shrink w-full>
           <li flex justify-between>
-            <span ai-user-name>{{ dynamicInfo?.name }}</span>
-            <van-image
-              v-if="userInfo.userId !== dynamicInfo?.userId"
-              :src="reportIcon"
-              :style="{
-                width: 'var(--report-image-width)',
-                height: 'var(--report-image-height)'
-              }"
-              @click="isReport = true"
-            />
+            <span class="user-name">{{ dynamicInfo?.name }}</span>
           </li>
           <li>
-            <span mt-1 ai-text-desc>
+            <span mt-1 class="text-desc">
               {{ dynamicInfo?.dynamicDesc }}
             </span>
           </li>
         </ul>
       </div>
-      <ul class="bottom-btn">
-        <li @click="isPopup = true">
-          <van-image
-            :src="messageIcon"
-            class="icon-box"
-            :style="{
-              width: 'var(--video-details-comment-width)',
-              height: 'var(--video-details-comment-height)'
-            }"
-          />
-          <span class="public-number">
-            {{ dynamicInfo?.dynamicCommentCount }}
-          </span>
-        </li>
-        <li>
-          <van-image
-            :src="isVideoLike ? likeIcon : unLikeIcon"
-            class="icon-box"
-            :style="{
-              width: 'var(--unlike-image-width)',
-              height: 'var(--unlike-image-height)'
-            }"
-            @click="onVideoLike"
-          />
-          <span class="public-number">
-            {{ dynamicInfo?.dynamicLikeCount }}
-          </span>
-        </li>
-      </ul>
     </div>
 
-    <popup-box v-model:show="isPopup">
+    <popup-box v-model:show="isPopup" style="background: url(/background/comment_btm_bg.png);">
       <div p-layout-padding>
-        <van-divider content-position="left">Comments</van-divider>
-        <div class="h-[56vh] overflow-y-auto">
+        <div class="comments-title mt-4 mb-5">Comments</div>
+        <div class="h-[40vh] overflow-y-auto">
           <comment-card
             :list="commentList"
             class="video-comment-card_box"
@@ -168,6 +157,16 @@
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
   }
+  .comments-title{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+    background: rgb(233, 175, 251);
+    border: 1px solid rgb(51, 51, 51);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+  }
   .video-box {
     width: 100%;
     height: 100vh;
@@ -176,6 +175,7 @@
     video {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       background: var(--ai-short-video-bg-color);
     }
 
@@ -193,38 +193,41 @@
       left: 0;
       right: 0;
       bottom: calc(20px + env(safe-area-inset-bottom));
-      // background: linear-gradient(180deg, rgba(14, 8, 15, 0.8) 0%, rgba(14, 8, 15, 0) 100%);
     }
 
     .user-head {
       width: var(--ai-short-video-avatar-width);
       height: var(--ai-short-video-avatar-height);
     }
-
+    .user-name{
+      color:white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .text-desc{
+      color:white;
+      font-size: 14px;
+    }
     .bottom-btn {
       display: flex;
-      justify-content: space-between;
-
+      justify-content: end;
+      gap: 14px;
       li {
-        position: relative;
+        border: 1px solid rgb(0, 0, 0);
         width: var(--ai-short-video-bottom-btn-width);
         height: var(--ai-short-video-bottom-btn-height);
         border-radius: var(--ai-short-video-bottom-btn-border-radius);
         background: var(--ai-short-video-bottom-btn-bg-color);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-
-        .icon-box {
-          position: absolute;
-          bottom: 26px;
-          z-index: 1;
-        }
-
+        gap: 2px;
         .public-number {
-          font-size: 20px !important;
-          margin-top: 22px;
+            margin-top: 0;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: white;
         }
       }
     }

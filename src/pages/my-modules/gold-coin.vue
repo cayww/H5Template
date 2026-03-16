@@ -81,27 +81,26 @@
   }
 
   .bottom-selsect {
-    margin-top: 16px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     /* 每行 3 列，每列等宽 */
-    gap: 10px;
+    gap: 12px;
     /* 可选：设置子项之间的间距 */
-
     li {
       width: var(--ai-coin-select-style-width);
       height: var(--ai-coin-select-style-height);
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
+      padding: 0 10px;
+      justify-content: space-between;
       border-radius: var(--ai-coin-select-style-border-radius);
       background: var(--ai-coin-select-style-bg-color);
-
       p {
-        margin-bottom: 8px;
+        margin-bottom: 0px;
         display: flex;
-        align-items: baseline;
+        align-items: center;
       }
     }
 

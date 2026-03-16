@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, showToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast, showToast } from 'vant'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
@@ -78,10 +78,10 @@
 
 <template>
   <div px-layout-padding class="publish-video_box">
-    <text-box v-model="formData.dynamicDesc" maxlength="50" rows="3" />
+    <text-box v-model="formData.dynamicDesc" maxlength="150" rows="5" class="desc-box" />
 
     <!-- 视频上传 -->
-    <div my-6>
+    <div mt-6>
       <div ai-input-title>Upload(video)</div>
       <uploader-box
         v-model:list="formData.dynamicPic"
@@ -106,6 +106,10 @@
 </template>
 
 <style lang="less" scoped>
+  .desc-box {
+    border: 1px solid rgb(51, 51, 51);
+    border-radius: 30px;
+  }
   .publish-video_box {
     min-height: 100vh;
     padding-top: calc(

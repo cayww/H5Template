@@ -122,21 +122,23 @@
 
 <template>
   <div text-red class="chat-details_box">
-    <div class="top-box">
-      <ul p-layout-padding>
-        <li>
-          <span>I'm feeling great today.</span>
-          <van-icon name="chat-o" />
-        </li>
-        <li>
-          <span>Do you like reading?</span>
-          <van-icon name="chat-o" />
-        </li>
-        <li>
-          <span>Can you comfort me?</span>
-          <van-icon name="chat-o" />
-        </li>
-      </ul>
+    <div class="fashion-ai-bar top-12vh">
+      <div class="fashion-ai-content">
+        <div class="fashion-ai-text">
+          <div class="title">Fashion AI</div>
+          <div class="desc">
+            I'm feeling great today.<br />
+            Do you like reading?<br />
+            Can you comfort me?
+          </div>
+        </div>
+      </div>
+
+      <!-- 右下角人物 -->
+      <img
+        src="/background/leepy_main_ai_rw.png"
+        class="fashion-ai-rw"
+      />
     </div>
 
     <chat-list
@@ -149,7 +151,12 @@
 
 <style lang="less" scoped>
   .bottom-list_box {
+    background: rgb(255, 255, 255);
     padding-bottom: calc(80px + var(--ai-view-padding-bottom));
+    margin-top:15vh;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px -2px 0px  rgb(0, 0, 0);
+    border-top: 1px solid rgb(51, 51, 51);
   }
   .chat-details_box {
     min-height: 100vh;
@@ -158,7 +165,6 @@
 
   .top-box {
     height: 282px;
-    background: url('@/assets/public/top-chat.png');
     background-size: cover;
     display: flex;
     align-items: flex-end;
@@ -184,5 +190,56 @@
         justify-content: space-between;
       }
     }
+  }
+  .fashion-ai-bar {
+    height: 95px;
+    padding: 0 13px;
+    position: relative;
+    margin: 0px 20px;
+
+    background-image: url('/background/leepy_main_ai_bar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .fashion-ai-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .fashion-ai-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .desc {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .forward-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+
+  .fashion-ai-rw {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: 87px;
+    height: 125px;
   }
 </style>
