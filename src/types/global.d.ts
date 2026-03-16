@@ -316,6 +316,7 @@ interface Window {
       messageIconWidth: string
       messageIconHeight: string
       /** 点赞图标 */
+      unLikeIcon: string
       likeIcon: string
       avatarWidth: string
       avatarHeight: string

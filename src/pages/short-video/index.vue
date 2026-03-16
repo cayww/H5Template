@@ -8,7 +8,7 @@
     name: 'ShortVideo'
   })
 
-  const { reportIcon, addIcon, messageIcon, detailLikeIcon, likeIcon } =
+  const { reportIcon, addIcon, messageIcon, likeIcon, unLikeIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
   const {
@@ -132,7 +132,7 @@
         </li>
         <li>
           <van-image
-            :src="isVideoLike ? likeIcon : detailLikeIcon"
+            :src="isVideoLike ? likeIcon : unLikeIcon"
             class="icon-box"
             :style="{
               width: 'var(--unlike-image-width)',

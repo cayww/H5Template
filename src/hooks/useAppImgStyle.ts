@@ -54,7 +54,10 @@ export const useAppImgStyle = () => {
   const likeIcon = computed(
     () => styleJson?.shortVideoStyle?.likeIcon || Like
   )
-
+  /** 短视频未点赞图标 */
+  const unLikeIcon = computed(
+    () => styleJson?.shortVideoStyle?.unLikeIcon || Like
+  )
   /** 其它主页添加图标 */
   const otherHomeAddIcon = computed(
     () => styleJson?.otherHomeStyle?.addIcon || Add
@@ -67,7 +70,6 @@ export const useAppImgStyle = () => {
   const otherHomeLikeIcon = computed(
     () => styleJson?.otherHomeStyle?.likeIcon || Like
   )
-
   return {
     inputSendIcon,
     detailLikeIcon,
@@ -78,6 +80,7 @@ export const useAppImgStyle = () => {
     chatBgImage,
     addIcon,
     messageIcon,
+    unLikeIcon,
     likeIcon,
     otherHomeAddIcon,
     otherHomeMessageIcon,
