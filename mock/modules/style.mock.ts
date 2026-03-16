@@ -4,22 +4,22 @@
  */
 export default {
   /** 返回按钮背景图 */
-  backImage: '/icons/back',
+  backImage: '/icons/back.png',
   /** 返回图片大小 */
   backImageSize: {
     width: '40px',
     height: '40px'
   },
   /** 顶部右侧举报图片 */
-  reportImage: '/icons/more',
+  reportImage: '/icons/more.png',
   /** 举报图标大小 */
   reportImageSize: {
     width: '40px', // 图标宽度
     height: '40px' // 图标高度
   },
   /** 点赞图标 */
-  likeIcon: '/icons/liked',
-
+  likeIcon: '/icons/unlike.png',
+  likedIcon: '/icons/liked.png',
   /** 点赞图标大小 */
   unlikeImageSize: {
     width: '36px', // 图标宽度
@@ -27,107 +27,104 @@ export default {
   },
   /** 点赞数量文本样式 */
   likeNumTextStyle: {
-    fontSize: '12px',
+    fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(255, 255, 255, 0.8)'
+    color: 'rgba(51, 51, 51, 1)'
   },
   /** 用户名文本样式 */
   userNameStyle: {
     fontSize: '16px',
-    fontWeight: '400',
-    color: 'rgba(255, 255, 255, 1)'
+    fontWeight: '700',
+    color: 'rgba(51, 51, 51, 1)'
   },
   /** 头像样式（页面通用头像，小型的） */
-  avatarStyle: { width: '32px', height: '32px' },
+  avatarStyle: { width: '36px', height: '36px' },
   /** 作品文本样式(内容，备注项) */
   proseTextStyle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgb(255, 255, 255)',
+    color: 'rgba(102, 102, 102, 1)',
     sort: 'left'
   },
   /** 标签样式（如：描述下面的标签） */
   tagStyle: {
-    backgroundColor: 'rgb(35, 30, 36)',
-    borderRadius: '20px',
-    width: '65px',
+    backgroundColor: 'rgba(238, 250, 136, 1)',
+    borderRadius: '40px',
+    width: '92px',
     height: '26px',
     fontSize: '12px',
     fontWeight: '400',
-    color: 'rgb(255, 255, 255)'
+    color: 'rgba(51, 51, 51, 1)'
   },
   /** 文本输入框（发送内容）样式 */
   inputStyle: {
-    backgroundColor: 'rgba(62, 57, 63, 1)',
-    borderRadius: '30px',
+    backgroundColor: 'rgba(0, 0, 0, 1)',
+    borderRadius: '40px',
     width: '100%',
-    height: '46px',
+    height: '54px',
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgba(255, 255, 255, 0.8)',
-    placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
+    color: 'rgba(255, 255, 255, 1)',
+    placeholderCorlor: 'rgba(153, 153, 153, 1)',
     /** 右侧发送图标 */
-    sendIcon:
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_send_icon.png',
-    sendIconWidth: '21px',
-    sendIconHeight: '21px'
+    sendIcon: '/icons/send.png',
+    sendIconWidth: '36px',
+    sendIconHeight: '36px'
   },
   /** 表单标题样式 */
   formTitleStyle: {
     fontSize: '20px',
-    fontWeight: '400',
-    color: 'rgba(255, 255, 255, 1)',
+    fontWeight: '700',
+    color: 'rgba(51, 51, 51, 1)',
     marginBottom: '20px'
   },
   /** 表单富文本样式 */
   formRichTextStyle: {
     fontSize: '14px',
     fontWeight: '400',
-    color: 'rgb(255, 255, 255)',
-    backgroundColor: '#0e080f',
-    placeholderCorlor: 'rgba(255, 255, 255, 0.4)'
+    color: 'rgba(0, 0, 0, 1)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    placeholderCorlor: 'rgba(153, 153, 153, 1)'
   },
   /** 表单按钮样式 */
   formBtnStyle: {
-    backgroundColor: 'rgba(62, 57, 63, 1)',
-    borderRadius: '20px',
-    fontSize: '18px',
-    fontWeight: '400',
+    backgroundColor: 'rgba(0, 0, 0, 1)',
+    borderRadius: '40px',
+    fontSize: '20px',
+    fontWeight: '700',
     color: 'rgba(255, 255, 255, 1)'
   },
   /** 输入文本样式 */
   inputTextStyle: {
     borderRadius: '16px',
-    placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
-    color: 'rgba(255, 255, 255, 0.8)',
+    placeholderCorlor: 'rgba(153, 153, 153, 1)',
+    color: 'rgba(0, 0, 0, 1)',
     fontSize: '14px',
     fontWeight: '400',
-    backgroundColor: '#231e24'
+    backgroundColor: 'rgba(255, 255, 255, 1)'
   },
   /** 高亮按钮样式 */
   highlightBtnStyle: {
     color: 'rgba(255, 255, 255, 1)',
-    backgroundColor:
-      'linear-gradient(151.23deg, rgba(71, 252, 255, 1) 0%, rgba(255, 94, 135, 1) 100%)'
+    backgroundColor: 'rgba(0, 0, 0, 1)'
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
-    borderRadius: '20px',
-    width: '182px',
-    height: '46px',
+    borderRadius: '40px',
+    width: '198px',
+    height: '53px',
     fontSize: '20px',
-    fontWeight: '400'
+    fontWeight: '700'
   },
   /** 聊天列表样式 */
   chatListStyle: {
     avatarWidth: '44px',
     avatarHeight: '44px',
-    borderRadius: '24px',
+    borderRadius: '10px',
     /** 发送背景色 */
-    sendBgColor: '#434044',
+    sendBgColor: 'rgba(233, 175, 251, 1)',
     /** 接收背景色 */
-    receiveBgColor:
-      'linear-gradient(157.71deg, rgba(255, 94, 135, 1) 0%, rgba(71, 252, 255, 1) 100%)'
+    receiveBgColor: 'rgba(169, 192, 255, 1)'
   },
   /** 举报按钮 */
   reportBtnStyle: {
@@ -138,8 +135,8 @@ export default {
     },
     /** 取消按钮 */
     cancelBtnStyle: {
-      width: '182px',
-      height: '46px'
+      width: '198px',
+      height: '53px'
     }
   },
   /** 动态详情页 */

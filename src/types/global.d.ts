@@ -196,6 +196,7 @@ interface Window {
     }
     /** 点赞图标 */
     likeIcon: string
+    likedIcon: string
     /** 点赞图标大小 */
     unlikeImageSize: {
       width: string // 图标宽度

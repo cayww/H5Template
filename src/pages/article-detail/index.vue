@@ -9,7 +9,7 @@
     name: 'ArticleDetail'
   })
 
-  const { detailLikeIcon, likeIcon } = useAppImgStyle()
+  const { detailLikeIcon, detailLikedIcon } = useAppImgStyle()
   const { winPublishImageListData } = useWindow()
   const {
     loding,
@@ -50,7 +50,7 @@
         class="bottom-[-64px]"
       >
         <van-image
-          :src="isLike ? likeIcon : detailLikeIcon"
+          :src="isLike ? detailLikedIcon : detailLikeIcon"
           :style="{
             width: 'var(--unlike-image-width)',
             height: 'var(--unlike-image-height)'
