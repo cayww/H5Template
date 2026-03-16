@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import MasonryIcon from '@/assets/public/masonry-icon.png'
-  import MyIcon from '@/assets/public/my-icon.png'
+  import MasonryIcon from '@/assets/public/coin_dhh.png'
+  import MasonryIconW from '@/assets/public/masonry-icon.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
@@ -26,14 +26,14 @@
   <div safe-area-inset-top class="gold-coin_box">
     <div p-layout-padding>
       <ul class="top-box">
-        <li>
-          <van-image h-20 w-20 :src="MasonryIcon" fit="cover" />
-        </li>
         <li ml-8 flex flex-col>
-          <span ai-user-name>My diamonds</span>
-          <span text-6 text-white font-medium>
+          <span ai-user-name style="color:rgb(51, 51, 51);font-size:20px;font-weight:700">Wallet Balance:</span>
+          <span style="color:rgb(51, 51, 51);font-size:22px;" font-medium>
             {{ userInfo.coins }}
           </span>
+        </li>
+        <li>
+          <van-image h-20 w-20 :src="MasonryIcon" fit="cover" />
         </li>
       </ul>
 
@@ -46,7 +46,7 @@
           @click="formData.radio = item.key"
         >
           <p>
-            <van-image h-4 w-5 :src="MyIcon" fit="cover" />
+            <van-image h-4 w-5 :src="MasonryIconW" fit="cover" />
             <span ml-1 ai-user-name>{{ item.cions }}</span>
           </p>
           <span ai-text-desc>{{ item.meney }}$</span>
@@ -55,7 +55,7 @@
 
       <!-- 按钮 -->
       <div mt-6 flex justify-center>
-        <p ai-gradient-btn @click="onRecharge">Recharge</p>
+        <p ai-gradient-btn style="background: rgb(233, 175, 251);box-shadow: 2px 2px 0px  rgb(0, 0, 0);border: 2px solid rgb(51, 51, 51);" @click="onRecharge">Recharge</p>
       </div>
     </div>
   </div>
@@ -72,8 +72,8 @@
 
   .top-box {
     border-radius: 20px;
-    background: url(https://img.js.design/assets/img/691aed6ab5e8b987e5484ce3.png#e628c21f3eda4f689fb2344148e7f297);
-    border: 4px solid rgba(255, 255, 255, 0.09);
+    background: url(/background/coin_bar_bg.png) no-repeat center;
+    border: 1px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     padding: 20px;
@@ -88,6 +88,7 @@
     gap: 12px;
     /* 可选：设置子项之间的间距 */
     li {
+      border: 1px solid rgb(0, 0, 0);
       width: var(--ai-coin-select-style-width);
       height: var(--ai-coin-select-style-height);
       display: flex;

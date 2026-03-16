@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div style="display:flex;justify-content: center; align-items: center;">
     <van-image round :src="EmptyIcon" fit="cover" />
   </div>
 </template>
