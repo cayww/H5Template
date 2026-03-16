@@ -78,7 +78,7 @@
         round
         h-20
         w-20
-        :src="imgUrl || defaultHead"
+        :src="imgUrl || userInfo.avatar || defaultHead"
         fit="cover"
         @click="clickElement"
       />

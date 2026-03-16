@@ -79,7 +79,8 @@
       flex
       items-center
       justify-between
-      class="list-box rounded-[20px] bg-[#282329cc]"
+      class="list-box"
+      style="background: rgb(255, 255, 255);border: 1px solid rgb(51, 51, 51);border-radius: 20px;"
     >
       <ul>
         <li flex items-center>
@@ -96,7 +97,7 @@
         </li>
       </ul>
       <van-icon
-        color="#fff"
+        color="#000"
         :name="rightIcon"
         @click="onClick(item.userId, index)"
       />
