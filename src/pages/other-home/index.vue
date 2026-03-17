@@ -253,7 +253,7 @@
   }
   .other-home_box {
     min-height: 100vh;
-    background: var(--ai-other-home-bg-color);
+    background: var(--ai-other-home-bg-color) no-repeat top center / cover;
   }
 
   .top-user-info {

@@ -71,7 +71,7 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-setting-bg-color);
+    background: var(--ai-setting-bg-color) no-repeat top center / cover;
   }
 
   .list-btn {

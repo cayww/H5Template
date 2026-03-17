@@ -115,6 +115,6 @@
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
-    background: var(--ai-publish-video-bg-color);
+    background: var(--ai-publish-video-bg-color) no-repeat top center / cover;
   }
 </style>

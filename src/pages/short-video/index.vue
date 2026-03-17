@@ -176,7 +176,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: var(--ai-short-video-bg-color);
+      background: var(--ai-short-video-bg-color) no-repeat top center / cover;
     }
 
     .play-box {

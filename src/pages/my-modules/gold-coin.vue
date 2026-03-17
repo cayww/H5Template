@@ -67,12 +67,12 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-coin-bg-color);
+    background: var(--ai-coin-bg-color) no-repeat top center / cover;
   }
 
   .top-box {
-    border-radius: 20px;
-    background: url(/background/coin_bar_bg.png) no-repeat center;
+    border-radius: 50px;
+    background: url(/background/coin_bar_bg.png) no-repeat top center / cover;
     border: 1px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;

@@ -160,7 +160,7 @@
   }
   .chat-details_box {
     min-height: 100vh;
-    background: var(--ai-chat-details-bg-color);
+    background: var(--ai-chat-details-bg-color) no-repeat top center / cover;
   }
 
   .top-box {

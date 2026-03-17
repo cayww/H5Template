@@ -118,7 +118,7 @@
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
-    background: var(--ai-send-dynamic-bg-color);
+    background: var(--ai-send-dynamic-bg-color) no-repeat top center / cover;
     min-height: 100vh;
   }
   .desc-box {

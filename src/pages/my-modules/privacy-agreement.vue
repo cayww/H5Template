@@ -1,7 +1,7 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
   defineOptions({
     name: 'PrivacyAgreement'
-  }) 
+  })
 </script>
 
 <template>
@@ -17,6 +17,6 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-follow-bg-color);
+    background: var(--ai-follow-bg-color) no-repeat top center / cover;
   }
 </style>

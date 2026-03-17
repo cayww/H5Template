@@ -188,7 +188,7 @@
   }
   .private-chat_box {
     min-height: 100vh;
-    background: var(--ai-private-chat-bg-color) no-repeat top;
+    background: var(--ai-private-chat-bg-color) no-repeat top no-repeat top center / cover;
     object-fit: cover;
     padding-bottom: 70px;
   }

@@ -129,6 +129,6 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-edit-bg-color);
+    background: var(--ai-edit-bg-color) no-repeat top center / cover;
   }
 </style>

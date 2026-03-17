@@ -101,7 +101,7 @@
 
 <style lang="less" scoped>
   .article-detail_box {
-    background: var(--ai-article-detail-bg-color);
+    background: var(--ai-article-detail-bg-color) no-repeat top center / cover;
     min-height: 100vh;
   }
   .comments-title{
