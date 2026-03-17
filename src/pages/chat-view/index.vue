@@ -40,7 +40,7 @@
 <template>
   <div relative class="chat-view_box">
     <!-- Fashion AI -->
-    <div class="fashion-ai-bar top-12vh">
+    <div class="fashion-ai-bar">
       <div class="fashion-ai-content">
         <div class="fashion-ai-text">
           <div class="title">Fashion AI</div>
@@ -58,7 +58,7 @@
         class="fashion-ai-rw"
       />
     </div>
-    <div class="text-center w-full top-25vh absolute">
+    <div class="text-center w-full">
       <ul p-layout-padding>
         <li
           ai-text-desc
@@ -66,7 +66,7 @@
         >
           {{ winChatBotDesc.content }}
         </li>
-        <li flex justify-center class="public-btoom-btn">
+        <li flex justify-center mt-5>
           <p
             ai-gradient-btn
             class="bottom-btn public_btn"
@@ -112,10 +112,14 @@
 
 <style lang="less" scoped>
   .chat-view_box {
+    padding-top: var(--van-nav-bar-height);
+    display: flex;
+    flex-direction: column;
     background: url('/background/default_bg.png') no-repeat top center / cover;
     height: 100vh;
     overflow-y: auto;
     .content_box {
+      flex:1;
       padding: 10px;
       background: rgb(255, 255, 255);
       border: 1px solid rgb(51, 51, 51);
@@ -136,9 +140,7 @@
   }
 
   .block {
-    margin-top: 20vh;
     height: 300px;
-
     .content {
       width: var(--ai-chat-view-popup-bg-img-width);
       height: var(--ai-chat-view-popup-bg-img-height);

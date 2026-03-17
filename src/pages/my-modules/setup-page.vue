@@ -46,7 +46,7 @@
     </ul>
 
     <!-- 按钮 -->
-    <ul mt-60>
+    <ul class="bottom-box">
       <li flex justify-center>
         <p
           ai-gradient-btn
@@ -56,8 +56,13 @@
           Delete account
         </p>
       </li>
-      <li mt-5 flex justify-center>
-        <p ai-gradient-btn style="background:rgb(169, 192, 255)" class="bottom-btn" @click="onState('logout')">
+      <li flex justify-center>
+        <p
+          ai-gradient-btn
+          style="background:rgb(169, 192, 255)"
+          class="bottom-btn"
+          @click="onState('logout')"
+        >
           Log out
         </p>
       </li>
@@ -70,11 +75,17 @@
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
-    min-height: 100vh;
+
+    height: 100vh; // ✅ 修复溢出
+    display: flex;
+    flex-direction: column;
     background: var(--ai-setting-bg-color) no-repeat top center / cover;
   }
 
   .list-btn {
+    flex: 2; // ✅ 占满剩余空间
+    overflow-y: auto; // ✅ 防止撑出屏幕
+
     li + li {
       margin-top: 16px;
     }
@@ -98,7 +109,17 @@
     }
   }
 
+  .bottom-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom)); // ✅ 适配安全区
+  }
+
   .bottom-btn {
+    width: 80%;
+    text-align: center;
     background-image: var(--ai-setting-btn-color) !important;
     font-size: var(--ai-setting-btn-text-size) !important;
     font-weight: var(--ai-setting-btn-text-weight) !important;

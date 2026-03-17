@@ -8,6 +8,7 @@
   const emit = defineEmits<{
     send: [_: string]
   }>()
+
   const onSend = () => {
     emit('send', value.value)
     value.value = ''
@@ -15,11 +16,10 @@
 </script>
 
 <template>
-  <div safe-area-inset-bottom px-layout-padding class="input-box">
+  <div px-layout-padding class="input-box">
     <div class="input--width">
       <van-field
         v-model="value"
-        safe-area-inset-bottom
         placeholder="Say something"
       >
         <template #button>
@@ -31,7 +31,7 @@
                 height: 'var(--comment-input-image-height)'
               }"
               @click="onSend"
-             />
+            />
           </div>
         </template>
       </van-field>
@@ -41,14 +41,14 @@
 
 <style lang="less" scoped>
   .input-box {
-    position: fixed;
+    position: absolute; // ✅ 改这里
     bottom: 0;
     left: 0;
     width: 100%;
+
     display: flex;
     justify-content: center;
 
-    opacity: 1;
     background: linear-gradient(
       0deg,
       rgba(14, 8, 15, 0.8) 0%,
@@ -57,7 +57,7 @@
 
     .input--width {
       width: var(--ai-field-input-width);
-      padding-bottom: calc(20px + env(safe-area-inset-bottom));
+      padding-bottom: calc(20px + env(safe-area-inset-bottom)); // ✅ 安全区
     }
 
     .van-field {

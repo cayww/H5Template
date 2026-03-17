@@ -24,39 +24,55 @@
 
 <template>
   <div safe-area-inset-top class="gold-coin_box">
-    <div p-layout-padding>
-      <ul class="top-box">
-        <li ml-8 flex flex-col>
-          <span ai-user-name style="color:rgb(51, 51, 51);font-size:20px;font-weight:700">Wallet Balance:</span>
-          <span style="color:rgb(51, 51, 51);font-size:22px;" font-medium>
-            {{ userInfo.coins }}
-          </span>
-        </li>
-        <li>
-          <van-image h-20 w-20 :src="MasonryIcon" fit="cover" />
-        </li>
-      </ul>
+    <!-- 可滚动区域 -->
+    <div class="content">
+      <div p-layout-padding>
+        <ul class="top-box">
+          <li ml-8 flex flex-col>
+            <span ai-user-name style="color:rgb(51, 51, 51);font-size:20px;font-weight:700">
+              Wallet Balance:
+            </span>
+            <span style="color:rgb(51, 51, 51);font-size:22px;" font-medium>
+              {{ userInfo.coins }}
+            </span>
+          </li>
+          <li>
+            <van-image h-20 w-20 :src="MasonryIcon" fit="cover" />
+          </li>
+        </ul>
 
-      <!-- 选项数据 -->
-      <ul class="bottom-selsect">
-        <li
-          v-for="item in winCoinData"
-          :key="item.key"
-          :class="{ 'on-active': formData.radio === item.key }"
-          @click="formData.radio = item.key"
-        >
-          <p>
-            <van-image h-4 w-5 :src="MasonryIconW" fit="cover" />
-            <span ml-1 ai-user-name>{{ item.cions }}</span>
-          </p>
-          <span ai-text-desc>{{ item.meney }}$</span>
-        </li>
-      </ul>
-
-      <!-- 按钮 -->
-      <div mt-6 flex justify-center>
-        <p ai-gradient-btn style="background: rgb(233, 175, 251);box-shadow: 2px 2px 0px  rgb(0, 0, 0);border: 2px solid rgb(51, 51, 51);" @click="onRecharge">Recharge</p>
+        <ul class="bottom-selsect">
+          <li
+            v-for="item in winCoinData"
+            :key="item.key"
+            :class="{ 'on-active': formData.radio === item.key }"
+            @click="formData.radio = item.key"
+          >
+            <p>
+              <van-image h-4 w-5 :src="MasonryIconW" fit="cover" />
+              <span ml-1 ai-user-name>{{ item.cions }}</span>
+            </p>
+            <span ai-text-desc>{{ item.meney }}$</span>
+          </li>
+        </ul>
       </div>
+    </div>
+
+    <!-- 浮动按钮 -->
+    <div class="float-btn">
+      <p
+        class="btn"
+        style="
+          background: rgb(233, 175, 251);
+          box-shadow: 2px 2px 0px rgb(0, 0, 0);
+          border: 2px solid rgb(51, 51, 51);
+          border-radius: 50px;
+          width: 60%;
+        "
+        @click="onRecharge"
+      >
+      Recharge
+      </p>
     </div>
   </div>
 </template>
@@ -66,8 +82,18 @@
     padding-top: calc(
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
-    min-height: 100vh;
+    height: 100vh;
+    position: relative;
     background: var(--ai-coin-bg-color) no-repeat top center / cover;
+  }
+
+  /* 滚动区域 */
+  .content {
+    height: 100%;
+    overflow-y: auto;
+
+    /* ❗关键：给底部按钮留空间 */
+    padding-bottom: 120px;
   }
 
   .top-box {
@@ -84,9 +110,8 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    /* 每行 3 列，每列等宽 */
     gap: 12px;
-    /* 可选：设置子项之间的间距 */
+
     li {
       border: 1px solid rgb(0, 0, 0);
       width: var(--ai-coin-select-style-width);
@@ -98,6 +123,7 @@
       justify-content: space-between;
       border-radius: var(--ai-coin-select-style-border-radius);
       background: var(--ai-coin-select-style-bg-color);
+
       p {
         margin-bottom: 0px;
         display: flex;
@@ -108,5 +134,23 @@
     .on-active {
       background: var(--ai-coin-select-style-selected-color);
     }
+  }
+
+  /* ✅ 浮动按钮 */
+  .float-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
   }
 </style>
